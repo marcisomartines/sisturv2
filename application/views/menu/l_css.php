@@ -6,10 +6,10 @@
  * Time: 13:35
  */
 ?>
-<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?=base_url()?>bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet" href="<?=base_url()?>dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="<?=base_url()?>dist/css/skins/_all-skins.min.css">
 <link rel="stylesheet" href="<?=base_url()?>plugins/iCheck/flat/blue.css">
 <link rel="stylesheet" href="<?=base_url()?>plugins/iCheck/square/blue.css">
