@@ -26,7 +26,18 @@ include_once "menu/l_css.php"
     </div><!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Faça o login para entrar no sistema</p>
-        <?=form_open('Principal/loginValidation')?>
+        <?=form_open('Login/')?>
+        <?php
+        if(validation_errors()){
+            ?>
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i> Erro ao efetuar o login!</h4>
+                <?=validation_errors()?>
+            </div>
+        <?php
+        }
+        ?>
             <div class="form-group has-feedback">
                 <?=form_input(array(
                     'name'  =>  "nome",

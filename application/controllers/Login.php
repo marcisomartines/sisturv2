@@ -5,11 +5,12 @@
  * Date: 27/07/2016
  * Time: 22:08
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Login extends CI_Controller{
 
-    public function login()
+    public function index()
     {
         $this->load->library('form_validation');
 
@@ -29,6 +30,17 @@ class Login extends CI_Controller{
     public function logout(){
         $this->session->sess_destroy();
         redirect('Principal/index');
+    }
+
+    public function validate_credentials(){
+        $this->load->model('md_login');
+
+        if($this->md_login->can_log_in()){
+            return true;
+        }
+        $this->form_validation->set_message('validate_credentials','Usuario/Senha incorretos');
+
+        return false;
     }
 
 }

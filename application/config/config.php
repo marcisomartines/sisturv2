@@ -27,7 +27,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 $config['error_views_path'] = '';
 $config['cache_path'] = '';
 $config['cache_query_string'] = FALSE;
-$config['encryption_key'] = '';
+$config['encryption_key'] = '4129485e523446bbc43ef6b83c2d2b3d';
 
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
