@@ -22,6 +22,7 @@ class Login extends CI_Controller{
                 'is_logged_in'=>1
             ];
             $this->session->set_userdata($usuario);
+            redirect('Principal/');
         }else{
             $this->load->view('login');
         }
