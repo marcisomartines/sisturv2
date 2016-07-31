@@ -6,7 +6,7 @@
  * Date: 30/07/2016
  * Time: 14:24
  */
-class md_passagem extends CI_Model
+class Md_passagem extends CI_Model
 {
     public function reservaFeita(){
         $numReserva = $this->db->select('MONTH(tb_tour.data_saida) as mes,COUNT(*) as vendas')

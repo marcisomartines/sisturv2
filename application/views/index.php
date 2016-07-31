@@ -105,39 +105,15 @@
             </section><!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
             <section class="col-lg-5 connectedSortable">
+              <?php
+              $viagens = $this->viagem->viagens();
+              foreach($viagens as $via){
 
-              <!--Viagens -->
+                ?>
               <div class="box box-solid">
                 <div class="box-header">
                   <i class="fa fa-th"></i>
-                  <h3 class="box-title">Viagens</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn bg-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn bg-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="box-body border-radius-none">
-<!--                  <div class="chart" id="line-chart" style="height: 250px;"></div>-->
-                  <table class="table table-bordered">
-                    <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Destino</th>
-                      <th>Reserva</th>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>
-                        Disponivel
-                      </td>
-                    </tr>
-                  </table>
-                </div><!-- /.box-body -->
-              </div>
-              <div class="box box-solid">
-                <div class="box-header">
-                  <i class="fa fa-th"></i>
-                  <h3 class="box-title">Viagens</h3>
+                  <h3 class="box-title">Viagens - <?=$via['destino']?></h3>
                   <div class="box-tools pull-right">
                     <button class="btn bg-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn bg-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -145,57 +121,68 @@
                 </div>
                 <div class="box-body border-radius-none">
                   <!--                  <div class="chart" id="line-chart" style="height: 250px;"></div>-->
+                  <!--tabela-->
                   <table class="table table-bordered">
+                  <?php
+                  $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
+                  foreach($listaViagem as $lista){
+                    $reserva = 0;
+                    $un_res = 0;
+//                    for ($i = 1; $i <= $lista['nr_poltrona']; $i++) {
+//                      $this->db->where('id_tour', $lista['id_tour']);
+//                      $this->db->where('nr_poltrona', $i);
+//                      $livre = $this->db->get('tb_reservs');
+//                      if ($livre->num_rows() > 0) {
+//                        foreach ($livre->result() as $livre)
+//                          if ($livre->tipo == 'i' || $livre->tipo == 'v') {
+//                            $un_res++;
+//                            if ($un_res == 2) {
+//                              $reserva++;
+//                              $un_res = 0;
+//                            }
+//                          }
+//                        if ($livre->tipo == 'd') {
+//                          $reserva++;
+//                        }
+//                      }
+//                    }
+                    $data_saida = implode("/", array_reverse(explode("-", $lista['data_saida'])));
+                    ?>
                     <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Task</th>
-                      <th>Progress</th>
-                      <th style="width: 40px">Label</th>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        <!--                                        <a href="#" class="list-group-item">-->
+                        <i class="fa fa-calendar"></i> <?= $lista['destino'] ?> - <?php
+                        if ($lista['tipo'] == 'v')
+                          echo "Viagem";
+                        elseif ($lista['tipo'] == 'f')
+                          echo "Fretado";
+                        elseif ($lista['tipo'] == 't')
+                          echo "Turismo";
+                        elseif ($lista['tipo'] == 'e')
+                          echo "Excursão";
+                        ?> - <?= $data_saida ?>
                       </td>
-                      <td><span class="badge bg-red">55%</span></td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                        </div>
+                        <?php
+                        if ($lista['nr_poltrona'] - $reserva > 0) {
+                          echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Disponivel"></form>';
+                        } else {
+                          echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-danger btn-xs" value="Esgotado"></form>';
+                        }
+                        ?>
                       </td>
-                      <td><span class="badge bg-yellow">70%</span></td>
                     </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-green">90%</span></td>
-                    </tr>
+                    <!--                                        </a>-->
+                    <?php
+                  }
+                  ?>
                   </table>
+                  <!--fim tabela-->
                 </div><!-- /.box-body -->
               </div>
-              <!-- /.box -->
+              <?php
+              }
+              ?>
 
               <!-- Calendar -->
               <div class="box box-solid bg-green-gradient">

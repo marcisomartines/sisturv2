@@ -14,4 +14,19 @@ class Viagem
     {
         $this->CI = &get_instance();
     }
+    
+    public function viagens(){
+        $this->CI->load->model('md_viagem');
+        $viagem = $this->CI->md_viagem->viagens();
+        
+        return $viagem;
+    }
+
+    public function retornaListaViagem($id_viagem){
+
+        $this->CI->load->model('md_viagem');
+        $listaViagem = $this->CI->md_viagem->listaViagem($id_viagem);
+
+        return $listaViagem;
+    }
 }
