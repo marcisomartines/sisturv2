@@ -29,7 +29,7 @@ class Passagem
         $this->CI->load->model('md_passagem');
         $confirmada = $this->CI->md_passagem->reservaConfirmada();
         
-        return $confirmada['vendas'];
+        return $confirmada['vendasConfirmada'];
     }
 
     public function reservaAusente()
@@ -37,6 +37,14 @@ class Passagem
         $this->CI->load->model('md_passagem');
         $ausente = $this->CI->md_passagem->reservaAusente();
         
-        return $ausente['vendas'];
+        return $ausente['vendasAusente'];
+    }
+
+    public function reservaGrafico(){
+        $this->CI->load->model('md_passagem');
+        $this->CI->load->helper('data');
+        $grafico = $this->CI->md_passagem->reservaGrafico();
+
+        return $grafico;
     }
 }
