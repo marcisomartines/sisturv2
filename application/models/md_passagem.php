@@ -16,6 +16,11 @@ class Md_passagem extends CI_Model
             ->where('MONTH(tb_tour.data_saida)=MONTH(CURDATE())')
             ->group_by('MONTH(tb_tour.data_saida)')
             ->get()->result_array();
+        
+        if(empty($numReserva)){
+            return $numReserva[0]['vendas']=0;
+        }
+
         return $numReserva[0];
     }
 
@@ -28,6 +33,11 @@ class Md_passagem extends CI_Model
             ->where('MONTH(tb_tour.data_saida)=MONTH(CURDATE())')
             ->group_by('MONTH(tb_tour.data_saida)')
             ->get()->result_array();
+
+        if(empty($numReserva)){
+            return $numReserva[0]['vendasConfirmada']=0;
+        }
+
         return $numReserva[0];
     }
 
@@ -40,6 +50,11 @@ class Md_passagem extends CI_Model
             ->where('MONTH(tb_tour.data_saida)=MONTH(CURDATE())')
             ->group_by('MONTH(tb_tour.data_saida)')
             ->get()->result_array();
+
+        if(empty($numReserva)){
+            return $numReserva[0]['vendasAusente']=0;
+        }
+
         return $numReserva[0];
     }
 

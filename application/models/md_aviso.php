@@ -43,6 +43,12 @@ class Md_aviso extends CI_Model
         
         return $licenciamento;
     }
+
+    public function avisosMotorista(){
+        $documento = $this->db->query("SELECT * FROM tb_drivers WHERE Month(validade_cnh)=Month(Now()) AND Year(validade_cnh)=Year(Now()) AND status='A'")->result_array();
+
+        return $documento;
+    }
     
     public function avisosCarro(){
         $aviso['antt'] = $this->antt();

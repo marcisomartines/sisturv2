@@ -35,7 +35,7 @@
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3><?=$reserva?></h3>
+                  <h3><?=empty($reserva)? '0' : $reserva?></h3>
                   <p>Reservas no mês</p>
                 </div>
                 <div class="icon">
@@ -48,7 +48,7 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3><?=$confirmado?> <sup style="font-size: 15px">passagem(s)</sup></h3>
+                  <h3><?=empty($confirmado) ? '0' : $confirmado?> <sup style="font-size: 15px">passagem(s)</sup></h3>
                   <p>Confirmadas</p>
                 </div>
                 <div class="icon">
@@ -61,7 +61,7 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3><?=$ausente?> <sup style="font-size: 15px">passagem(s)</sup></h3>
+                  <h3><?=empty($ausente) ? '0' : $ausente?> <sup style="font-size: 15px">passagem(s)</sup></h3>
                   <p>Ausentes</p>
                 </div>
                 <div class="icon">
@@ -114,11 +114,50 @@
                     <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                   </div><!-- /. tools -->
                 </div><!-- /.box-header -->
+                <?php
+                  $avisoCarros=$this->avisos->avisosCarro();
+                  $avisoMotorista=$this->avisos->avisosMotorista();
+                  if(!empty($avisoCarros) || !empty($avisoMotorista)){
+                ?>
                 <div class="box-body no-padding">
-                  <pre>
-                  <?=var_dump($this->avisos->avisosCarro())?>
-                    </pre>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>Descrição</td>
+                      <td>Ação</td>
+                    </tr>
+                      <?php
+                        foreach($avisoCarros as $key => $value) {
+                          foreach ($value as $tipo => $valor) {
+                            ?>
+                            <tr>
+                            </tr>
+                            <td><i class="fa fa-truck"></i> Ônibus <strong><?= $valor['codigo'] ?></strong> esta com o documento <strong><?= ucfirst($key) ?></strong> vencendo esse m&ecirc;s! </td>
+                            <td><?= form_open('home/editarOnibus') ?>
+                              <input type="hidden" name="id_cars" value="<?= $valor['id_cars'] ?>" />
+                              <input type="submit" class="btn btn-primary btn-xs pull-right" value="Atualizar">
+                              </form></td>
+                            </tr>
+                            <?php
+                          }
+                        }
+                      foreach($avisoMotorista as $key => $value) {
+                          ?>
+                          <tr>
+                          </tr>
+                          <td><i class="fa fa-user"></i> Motorista <strong><?=$value['nome']?></strong> esta com a <strong>CNH</strong> vencendo esse mês!</td>
+                          <td><?= form_open('home/editarMotorista') ?>
+                            <input type="hidden" name="id_drivers" value="<?= $value['id_drivers'] ?>" />
+                            <input type="submit" class="btn btn-primary btn-xs pull-right" value="Atualizar">
+                            </form></td>
+                          </tr>
+                          <?php
+                      }
+                      ?>
+                  </table>
                 </div><!-- /.box-body -->
+                <?php
+                }//fim if
+                ?>
               </div><!-- /.box -->
             </section><!-- /.Left col -->
 
