@@ -156,7 +156,7 @@
                   </table>
                 </div><!-- /.box-body -->
                 <?php
-                }//fim if
+                }//fim if avisos
                 ?>
               </div><!-- /.box -->
             </section><!-- /.Left col -->
