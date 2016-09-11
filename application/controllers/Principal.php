@@ -16,6 +16,10 @@ class Principal extends CI_Controller {
 		$this->load->view('vw_reserva');
 	}
 
+	public function cliente(){
+		$this->load->view('vw_cliente');
+	}
+
 	public function login()
 	{
 		$this->load->view('login');

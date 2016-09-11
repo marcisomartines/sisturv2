@@ -34,49 +34,49 @@
                 </a>
             </li>
             <li class="<?=$cliente?> treeview">
-                <a href="<?=base_url()?>Principal/cliente">
+                <a href="<?=base_url()?>index.php/Principal/cliente">
                     <i class="fa fa-user"></i> <span>Cliente</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$agendamento?> treeview">
-                <a href="<?=base_url()?>Principal/agendamento">
+                <a href="<?=base_url()?>index.php/Principal/agendamento">
                     <i class="fa fa-calendar"></i> <span>Agendamento</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$onibus?> treeview">
-                <a href="<?=base_url()?>Principal/onibus">
+                <a href="<?=base_url()?>index.php/Principal/onibus">
                     <i class="fa fa-bus"></i> <span>Onibus</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$destino?> treeview">
-                <a href="<?=base_url()?>Principal/destino">
+                <a href="<?=base_url()?>index.php/Principal/destino">
                     <i class="fa fa-map-marker"></i> <span>Destino</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$motorista?> treeview">
-                <a href="<?=base_url()?>Principal/motorista">
+                <a href="<?=base_url()?>index.php/Principal/motorista">
                     <i class="fa fa-male"></i> <span>Motorista</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$guia?> treeview">
-                <a href="<?=base_url()?>Principal/guia">
+                <a href="<?=base_url()?>index.php/Principal/guia">
                     <i class="fa fa-street-view"></i> <span>Guia</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$usuario?> treeview">
-                <a href="<?=base_url()?>Principal/usuario">
+                <a href="<?=base_url()?>index.php/Principal/usuario">
                     <i class="fa fa-user"></i> <span>Usuário</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$relatorio?> treeview">
-                <a href="<?=base_url()?>Principal/relatorios">
+                <a href="<?=base_url()?>index.php/Principal/relatorios">
                     <i class="fa fa-book"></i> <span>Relat&oacute;rios</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>

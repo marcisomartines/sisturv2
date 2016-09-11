@@ -25,11 +25,11 @@ $reserva  = "active";
     <section class="content-header">
         <h1>
             Reservas
-            <small>Control panel</small>
+            <small>Listagem</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
+            <li><a href="#"><i class="fa fa-pie-chart"></i> Reservas</a></li>
+            <li class="active">Lista</li>
         </ol>
     </section>
 
