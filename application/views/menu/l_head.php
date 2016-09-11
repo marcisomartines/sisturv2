@@ -5,6 +5,16 @@
  * Date: 24/07/2016
  * Time: 13:12
  */
+$principal=
+$reserva=
+$cliente=
+$agendamento=
+$onibus=
+$destino=
+$motorista=
+$guia=
+$usuario=
+$relatorio='';
 include_once "l_css.php";
 ?>
 <head>

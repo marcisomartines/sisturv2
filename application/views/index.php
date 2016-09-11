@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <!-- HEAD -->
-    <?php include_once "menu/l_head.php"; ?>
+    <?php
+      include_once "menu/l_head.php";
+      $principal = "active";
+    ?>
     <!-- END HEAD -->
     <!-- LEFT MENU -->
     <?php include_once "menu/l_menue.php"; ?>
