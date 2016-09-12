@@ -33,7 +33,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
-            <li class="<?=$cliente?> treeview">
+            <li class="<?=$clientemenu?> treeview">
                 <a href="<?=base_url()?>index.php/Principal/cliente">
                     <i class="fa fa-user"></i> <span>Cliente</span>
                     <i class="fa fa-angle-left pull-right"></i>

@@ -11,7 +11,7 @@
 <!-- HEAD -->
 <?php
 include_once "menu/l_head.php";
-$cliente  = "active";
+$clientemenu  = "active";
 ?>
 <!-- END HEAD -->
 <!-- LEFT MENU -->
@@ -37,7 +37,38 @@ $cliente  = "active";
     <section class="content">
         <!-- Main row -->
         <div class="row">
-            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+            <div class="col-md-3">
+                <?php
+                echo form_open('home/buscaCliente');
+                $query = $this->db->get('tb_clients');
+                $cliente[] = '';
+                foreach ($query->result() as $clt) {
+                    $cliente[$clt->id_clients] = $clt->nome;
+                }
+                include 'ajaxCliente.php';
+                ?>
+            </div>
+            <div class="col-md-5">
+                <?php
+                echo form_button(array(
+                    "class"=>"btn btn-primary",
+                    "content"=>"<i class='fa fa-search'></i> Pesquisar",
+                    "type"=>"submit"
+                ));
+
+                echo form_button(array(
+                    'class'=>'btn btn-success',
+                    'content'=>"<i class='fa fa-search-plus'></i> Ver todos"
+                ));
+
+                echo form_button(array(
+                    'class'=>'btn bg-purple',
+                    'content'=>"<i class='fa fa-plus'></i> Cadastrar Cliente"
+                ));
+                echo form_close();
+                ?>
+            </div>
+        </div>
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
