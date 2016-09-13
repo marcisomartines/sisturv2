@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="<?=$clientemenu?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/cliente">
+                <a href="<?=base_url()?>index.php/Cliente/">
                     <i class="fa fa-user"></i> <span>Cliente</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li class="<?=$destino?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/destino">
+                <a href="<?=base_url()?>index.php/Destino/">
                     <i class="fa fa-map-marker"></i> <span>Destino</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
