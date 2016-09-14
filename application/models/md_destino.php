@@ -9,6 +9,7 @@
 class Md_destino extends CI_Model
 {
     public function destinos(){
+
         $this->db->order_by("destino", "asc");
         $destino = $this->db->get('tb_viagem')->result_array();
 

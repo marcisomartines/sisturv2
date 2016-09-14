@@ -12,8 +12,8 @@
 <?php
 include_once "menu/l_head.php";
 $destino  = "active";
-$destinos =  $this->destino->destinos();
-var_dump($destinos);
+$destinos =  $this->viagem->destinos();
+
 ?>
 <!-- END HEAD -->
 <!-- LEFT MENU -->
@@ -39,7 +39,25 @@ var_dump($destinos);
     <section class="content">
         <!-- Main row -->
         <div class="row">
-
+            <div class="col-lg-5">
+            <table class="table table-striped">
+            <?php
+            foreach($destinos as $des){
+                ?>
+                <tr>
+                    <td><?=$des['destino']?></td>
+                    <td><?php
+                        echo form_button(array(
+                            'class'=>'btn btn-block btn-primary',
+                            'content'=>"<i class='fa fa-pencil-square-o'></i> Editar"
+                        ));
+                        ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </table>
+                </div>
         </div>
 </div>
 <!-- FIM CONTEUDO -->

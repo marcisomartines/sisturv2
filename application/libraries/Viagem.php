@@ -29,4 +29,12 @@ class Viagem
 
         return $listaViagem;
     }
+
+    public function destinos(){
+
+        $this->CI->load->model('md_destino');
+        $destino = $this->CI->md_destino->destinos();
+        
+        return $destino;
+    }
 }

@@ -9,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Destino extends CI_Controller
 {
     public function index(){
+
+        $this->load->library('viagem');
         $this->load->library('destino');
         $this->load->view('vw_destino');
     }
