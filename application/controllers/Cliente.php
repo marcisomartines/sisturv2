@@ -13,4 +13,9 @@ class Cliente extends  CI_Controller{
     public function index(){
         $this->load->view('vw_cliente');
     }
+
+    public function autoComplete() {
+		$this->load->view('ajaxBuscaCliente');
+	}
+
 }

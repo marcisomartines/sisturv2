@@ -20,10 +20,6 @@ class Principal extends CI_Controller {
 		$this->load->view('vw_cliente');
 	}
 
-	public function autoComplete() {
-		$this->load->view('ajaxBuscaCliente');
-	}
-
 	public function login()
 	{
 		$this->load->view('login');
