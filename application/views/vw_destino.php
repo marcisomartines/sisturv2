@@ -56,7 +56,10 @@ $destinos =  $this->viagem->destinos();
                     <td><?php
                         echo form_button(array(
                             'class'=>'btn btn-primary',
-                            'content'=>"<i class='fa fa-pencil-square-o'></i> Editar"
+                            'id'=>$des['id_viagem'],
+                            'content'=>"<i class='fa fa-pencil-square-o'></i> Editar",
+                            "data-toggle"=>"modal",
+                            "data-target" =>'#cadastrarDestino'
                         ));
                         ?></td>
                 </tr>
