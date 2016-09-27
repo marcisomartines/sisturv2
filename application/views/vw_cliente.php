@@ -38,8 +38,7 @@ $clientemenu  = "active";
         <!-- Main row -->
         <div class="row">
             <div class="col-md-3">
-                <?php
-                echo form_open('home/buscaCliente');
+                <?php 
                 $query = $this->db->get('tb_clients');
                 $cliente[] = '';
                 foreach ($query->result() as $clt) {
@@ -53,7 +52,7 @@ $clientemenu  = "active";
                 echo form_button(array(
                     "class"=>"btn btn-primary",
                     "content"=>"<i class='fa fa-search'></i> Pesquisar",
-                    "type"=>"submit"
+                    "onclick"=>"buscaCliente();"
                 ));
 
                 echo form_button(array(
@@ -65,7 +64,6 @@ $clientemenu  = "active";
                     'class'=>'btn bg-purple',
                     'content'=>"<i class='fa fa-plus'></i> Cadastrar Cliente"
                 ));
-                echo form_close();
                 ?>
             </div>
         </div>
