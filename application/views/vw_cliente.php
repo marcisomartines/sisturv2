@@ -69,6 +69,28 @@ $clientemenu  = "active";
                 ?>
             </div>
         </div>
+        <div class="col-lg-12">
+            <table class="table table-hover">
+                <tr>
+                    <th>Nome</th>
+                    <th>RG</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Celular</th>
+                    <th>Loc. Embarque</th>
+                    <th>Ação</th>
+                </tr>
+                <tr>
+                    <td>Marciso Gonzalez Martines</td>
+                    <td>01334961</td>
+                    <td>022.263.158-68</td>
+                    <td>67 3388-0836</td>
+                    <td>67 99203-8349</td>
+                    <td>Rodoviaria Antiga</td>
+                    <td><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                </tr>
+            </table>
+        </div>
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->

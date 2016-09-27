@@ -42,9 +42,9 @@ $destinos =  $this->viagem->destinos();
             <div class="col-lg-5">
                 <?php
                     echo form_button([
-                        "class"=>"btn bg-purple",
-                        "content"=>"<i class='fa fa-plus'></i> Cadastrar Destino",
-                        "data-toggle"=>"modal",
+                        "class"       =>"btn bg-purple",
+                        "content"     =>"<i class='fa fa-plus'></i> Cadastrar Destino",
+                        "data-toggle" =>"modal",
                         "data-target" =>'#cadastrarDestino']);
                 ?> 
             <table class="table table-striped">
@@ -55,10 +55,10 @@ $destinos =  $this->viagem->destinos();
                     <td><?=$des['destino']?></td>
                     <td><?php
                         echo form_button(array(
-                            'class'=>'btn btn-primary',
-                            'id'=>$des['id_viagem'],
-                            'content'=>"<i class='fa fa-pencil-square-o'></i> Editar",
-                            "data-toggle"=>"modal",
+                            'class'       => 'btn btn-primary',
+                            'id'          => $des['id_viagem'],
+                            'content'     => "<i class='fa fa-pencil-square-o'></i> Editar",
+                            "data-toggle" =>"modal",
                             "data-target" =>'#cadastrarDestino'
                         ));
                         ?></td>
