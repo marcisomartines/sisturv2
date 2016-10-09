@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="<?=$reserva?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/reserva">
+                <a href="<?=base_url()?>index.php/Reserva/">
                     <i class="fa fa-pie-chart"></i> <span>Reserva</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>

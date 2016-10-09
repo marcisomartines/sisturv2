@@ -10,11 +10,6 @@ class Principal extends CI_Controller {
 		$this->load->library('avisos');
 		$this->load->view('index');
 	}
-	
-	public function reserva(){
-		$this->load->library('viagem');
-		$this->load->view('vw_reserva');
-	}
 
 	public function cliente(){
 		$this->load->view('vw_cliente');
