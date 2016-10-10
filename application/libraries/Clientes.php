@@ -34,7 +34,7 @@ class Clientes
             $html .= '<td>'.$cli['telefone'].'</td>';
             $html .= '<td>'.$cli['celular'].'</td>';
             $html .= '<td>'.$cli['loc_embarque'].'</td>';
-            $html .= '<td><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
             $html .= '</tr>';
         }
         $html .= "</table>";

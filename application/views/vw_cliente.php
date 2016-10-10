@@ -62,6 +62,8 @@ $clientemenu  = "active";
 
                 echo form_button(array(
                     'class'=>'btn bg-purple',
+                    "data-toggle"=>"modal",
+                    "data-target"=>"#myModal",
                     'content'=>"<i class='fa fa-plus'></i> Cadastrar Cliente"
                 ));
                 ?>
@@ -73,7 +75,24 @@ $clientemenu  = "active";
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Cadastrar Cliente</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- FOOTER -->
 <?php include_once "menu/l_footer.php"; ?>
 <!-- END FOOTER -->
