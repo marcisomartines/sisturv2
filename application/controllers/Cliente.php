@@ -18,4 +18,10 @@ class Cliente extends  CI_Controller{
 		$this->load->view('ajaxBuscaCliente');
 	}
 
+	public function buscaCliente(){
+		$this->load->library('clientes');
+		$this->clientes->listaCliente();
+	}
+
+
 }

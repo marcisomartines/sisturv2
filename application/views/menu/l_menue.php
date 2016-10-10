@@ -28,37 +28,37 @@
                 </a>
             </li>
             <li class="<?=$reserva?> treeview">
-                <a href="<?=base_url()?>index.php/Reserva/">
+                <a href="<?=base_url()?>Reserva/">
                     <i class="fa fa-pie-chart"></i> <span>Reserva</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$clientemenu?> treeview">
-                <a href="<?=base_url()?>index.php/Cliente/">
+                <a href="<?=base_url()?>Cliente/">
                     <i class="fa fa-user"></i> <span>Cliente</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$agendamento?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/agendamento">
+                <a href="<?=base_url()?>Principal/agendamento">
                     <i class="fa fa-calendar"></i> <span>Agendamento</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$onibus?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/onibus">
+                <a href="<?=base_url()?>Principal/onibus">
                     <i class="fa fa-bus"></i> <span>Onibus</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$destino?> treeview">
-                <a href="<?=base_url()?>index.php/Destino/">
+                <a href="<?=base_url()?>Destino/">
                     <i class="fa fa-map-marker"></i> <span>Destino</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li class="<?=$motorista?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/motorista">
+                <a href="<?=base_url()?>Principal/motorista">
                     <i class="fa fa-male"></i> <span>Motorista</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
