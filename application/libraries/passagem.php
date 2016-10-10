@@ -47,4 +47,11 @@ class Passagem
 
         return $grafico;
     }
+    
+    public function tourMes(){
+        $this->CI->load->model('md_passagem');
+        $tour = $this->CI->md_passagem->tourMes();
+
+        return $tour['vendas'];
+    }
 }

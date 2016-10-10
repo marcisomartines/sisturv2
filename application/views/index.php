@@ -13,6 +13,7 @@
     $confirmado = $this->passagem->reservaConfirmada();
     $reserva = $this->passagem->reservaFeita();
     $grafico = $this->passagem->reservaGrafico();
+    $tour = $this->passagem->tourMes();
     ?>
     <!-- END LEFT MENU -->
       <!-- INICIO CONTEUDO -->
@@ -74,7 +75,7 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3><?=empty($tour) ? '0' : $tour?> </h3>
                   <p>Viagens feita no mês</p>
                 </div>
                 <div class="icon">

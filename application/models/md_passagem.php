@@ -24,6 +24,21 @@ class Md_passagem extends CI_Model
         return $numReserva[0];
     }
 
+    public function tourMes(){
+        $numTour = $this->db->select('MONTH(tb_tour.data_saida) as mes,COUNT(*) as vendas')
+            ->from('tb_tour')
+            ->where('MONTH(tb_tour.data_saida)=MONTH(CURDATE())')
+            ->where('status','a')
+            ->group_by('MONTH(tb_tour.data_saida)')
+            ->get()->result_array();
+
+        if(empty($numTour)){
+            return $numTour[0]['vendas']=0;
+        }
+
+        return $numTour[0];
+    }
+
     public function reservaConfirmada(){
         $numReserva = $this->db->select('MONTH(tb_tour.data_saida) as mes,COUNT(*) as vendasConfirmada')
             ->from('tb_reservs')
