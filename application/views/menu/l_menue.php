@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="<?=$onibus?> treeview">
-                <a href="<?=base_url()?>Principal/onibus">
+                <a href="<?=base_url()?>Onibus/">
                     <i class="fa fa-bus"></i> <span>Onibus</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
