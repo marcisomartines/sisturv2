@@ -1,10 +1,9 @@
 function buscaCliente(){
-
     $.ajax({
         url: 'buscaCliente',
         type: 'POST',
         data: {nome: $("#course").val()},
-        success: function(data){
+        success: function(data){ 
             $('#clienteLista').html("");
             $('#clienteLista').html(data);
         }
