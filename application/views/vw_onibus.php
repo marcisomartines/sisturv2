@@ -39,24 +39,44 @@ $listaOnibus =  $this->carros->listarOnibus();
     <section class="content">
         <!-- Main row -->
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-12">
                 <?php
                 echo form_button([
                     "class"       =>"btn bg-purple",
                     "content"     =>"<i class='fa fa-plus'></i> Cadastrar Ônibus",
                     "data-toggle" =>"modal",
                     "data-target" =>'#cadastrarOnibus']);
-                var_dump($listaOnibus);
                 ?>
                 <table class="table table-striped">
-
+                    <tr>
+                    <th>Código</th>
+                    <th>Modelo</th>
+                    <th>N° Poltrona</th>
+                    <th>Placa</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                    </tr>
+                    <?php
+                    foreach($listaOnibus as $car){
+                    ?>
+                        <tr>
+                        <td><?=$car['codigo']?></td>
+                        <td><?=$car['modelo']?></td>
+                        <td><?=$car['nr_poltrona']?></td>
+                        <td><?=$car['placa']?></td>
+                        <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
+                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </table>
             </div>
         </div>
 </div>
 
 <!-- Modal -->
-<?php include_once "modal/vw_destinoModal.php"; ?>
+<?php include_once "modal/vw_onibusModal.php"; ?>
 <!-- FIM MODAL -->
 <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->

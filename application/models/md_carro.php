@@ -9,7 +9,7 @@
 class Md_carro extends CI_Model
 {
     public function listarOnibus(){
-        return $this->db->where('status','A')->get('tb_cars')->result_array();
+        return $this->db->get('tb_cars')->result_array();
     }
 
 }
