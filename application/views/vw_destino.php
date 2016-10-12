@@ -48,6 +48,10 @@ $destinos =  $this->viagem->destinos();
                         "data-target" =>'#cadastrarDestino']);
                 ?> 
             <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Ação</th>
+                </tr>
             <?php
             foreach($destinos as $des){
                 ?>
