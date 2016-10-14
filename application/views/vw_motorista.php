@@ -12,7 +12,7 @@
 <?php
 include_once "menu/l_head.php";
 $motorista  = "active";
-$listaMotorista =  $this->driver->listarMotorista();
+$listaMotorista =  $this->carros->listarMotorista();
 
 ?>
 <!-- END HEAD -->
@@ -26,7 +26,7 @@ $listaMotorista =  $this->driver->listarMotorista();
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Ônibus
+            Motorista
             <small>Listagem</small>
         </h1>
         <ol class="breadcrumb">
@@ -46,7 +46,6 @@ $listaMotorista =  $this->driver->listarMotorista();
                     "content"     =>"<i class='fa fa-plus'></i> Cadastrar Motorista",
                     "data-toggle" =>"modal",
                     "data-target" =>'#cadastrarMotorista']);
-                var_dump($listaMotorista);
                 ?>
                 <table class="table table-striped">
                     <tr>
@@ -57,6 +56,20 @@ $listaMotorista =  $this->driver->listarMotorista();
                     <th>Status</th>
                     <th>Ação</th>
                     </tr>
+                    <?php
+                    foreach($listaMotorista as $motorista){
+                        ?>
+                        <tr>
+                        <td><?=$motorista['nome']?></td>
+                        <td><?=$motorista['email']?></td>
+                        <td><?=$motorista['telefone']?></td>
+                        <td><?=$motorista['celular']?></td>
+                        <td><?=$motorista['status']=='A'?'ATIVO':'INATIVO'?></td>
+                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarMotorista"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </table>
             </div>
         </div>

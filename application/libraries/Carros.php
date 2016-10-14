@@ -19,4 +19,9 @@ class Carros
         $this->CI->load->model('md_carro');
         return $this->CI->md_carro->listarOnibus();
     }
+
+    public function listarMotorista(){
+        $this->CI->load->model('md_motorista');
+        return $this->CI->md_motorista->listarMotorista();
+    }
 }
