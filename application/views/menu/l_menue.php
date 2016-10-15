@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li class="<?=$motorista?> treeview">
-                <a href="<?=base_url()?>Motorista">
+                <a href="<?=base_url()?>Motorista/">
                     <i class="fa fa-male"></i> <span>Motorista</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li class="<?=$usuario?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/usuario">
+                <a href="<?=base_url()?>Usuario/">
                     <i class="fa fa-user"></i> <span>Usuário</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
