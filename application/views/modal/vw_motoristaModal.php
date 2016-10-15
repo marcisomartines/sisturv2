@@ -8,16 +8,78 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php
-                        echo form_label('Nome: ');
-                        echo form_input([
-                            "name"  =>"destino",
-                            "id"    =>"destino",
-                            "class" =>"form-control input-sm",
-                            "style" =>"text-transform:uppercase"
-                        ]);
-                        ?>
-                        <input type="hidden" id="id_destino" name="id_destino" />
+                        <div class='row'>
+                            <div class='col-md-4'>
+                                <?=form_label('Nome: ')?>
+                                <input type='text' name='nome' id='nome' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Data Nasc.: ')?>
+                                <input type='text' name='data_nascimento' id='data_nascimento' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?= form_label('RG: ')?>
+                                <input type='text' name='rg' id='rg' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('CPF: ')?>
+                                <input type='text' name='cpf' id='cpf' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?= form_label('CNH: ')?>
+                                <input type='text' name='cnh' id='cnh' class='form-control input-sm'>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                <?= form_label('Validade CNH: ')?>
+                                <input type='text' name='validade_cnh' id='validade_cnh' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-5'>
+                                <?= form_label('E-mail: ')?>
+                                <input type='text' name='email' id='email' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?= form_label('Telefone: ')?>
+                                <input type='text' name='telefone' id='telefone' class='form-control input-sm' value='67 '>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?= form_label('Celular: ')?>
+                                <input type='text' name='celular' id='celular' class='form-control input-sm' value='67 '>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <?= form_label('Rua: ')?>
+                                <input type='text' name='rua' id='rua' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-3'>
+                                <?= form_label('Bairro: ')?>
+                                <input type='text' name='bairro' id='bairro' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-3'>
+                                <?= form_label('Cidade: ')?>
+                                <input type='text' name='cidade' id='cidade' class='form-control input-sm'>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <?= form_label('Observação: ')?>
+                                <input type='text' name='onservacao' id='observacao' class='form-control input-sm'>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
