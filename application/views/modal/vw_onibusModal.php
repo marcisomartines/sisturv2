@@ -8,16 +8,100 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php
-                        echo form_label('Nome: ');
-                        echo form_input([
-                            "name"  =>"destino",
-                            "id"    =>"destino",
-                            "class" =>"form-control input-sm",
-                            "style" =>"text-transform:uppercase"
-                        ]);
-                        ?>
-                        <input type="hidden" id="id_destino" name="id_destino" />
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                <?=form_label('Código: ')?>
+                                <input type='text' name='codigo' id='codigo' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Montadora: ')?>
+                                <input type='text' name='montadora' id='montadora' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Modelo: ')?>
+                                <input type='text' name='modelo' id='modelo' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Ano: ')?>
+                                <input type='text' name='ano' id='ano' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Placa: ')?>
+                                <input type='text' name='placa' id='placa' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Chassis: ')?>
+                                <input type='text' name='chassis' id='chassis' class='form-control input-sm'>
+                            </div>
+
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                <?=form_label('N° Poltr.: ')?>
+                                <input type='text' name='nr_poltrona' id='nr_poltrona' class='form-control input-sm'>
+                            </div>
+                            <div class='col-md-2'>
+                                <?=form_label('ANTT/CRF: ')?>
+                                <input type='text' name='antt' id='antt' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Agepan: ')?>
+                                <input type='text' name='agepan' id='agepan' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Vistec: ')?>
+                                <input type='text' name='vistec' id='vistec' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('INMETRO: ')?>
+                                <input type='text' name='inmetro' id='inmetro' class='form-control input-sm'>
+                            </div>
+
+                            <div class='col-md-2'>
+                                <?=form_label('Seguro Início: ')?>
+                                <input type='text' name='seguro_inicio' id='seguro_inicio' class='form-control input-sm'>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                <?=form_label('Seguro Final: ')?>
+                                <input type='text' name='seguro_final' id='seguro_final' class='form-control input-sm'>
+                            </div>
+
+<!--                            <div class='col-md-1'>-->
+<!--                                --><?//=form_label('Valor KM: ')?>
+<!--                                <input type='text' name='valorkm' id='valorkm' class='form-control input-sm'>-->
+<!--                            </div>-->
+
+                            <div class='col-md-2'>
+                                <?php
+                                echo form_label('Licenciamento: ');
+                                $opcao[] = 'Escolha...';
+                                $opcao[1] = 'Janeiro';
+                                $opcao[2] = 'Fevereiro';
+                                $opcao[3] = 'Março';
+                                $opcao[4] = 'Abril';
+                                $opcao[5] = 'Maio';
+                                $opcao[6] = 'Junho';
+                                $opcao[7] = 'Julho';
+                                $opcao[8] = 'Agosto';
+                                $opcao[9] = 'Setembro';
+                                $opcao[10] = 'Outubro';
+                                $opcao[11] = 'Novembro';
+                                $opcao[12] = 'Dezembro';
+                                echo form_dropdown('licenciamento', $opcao, $this->input->post('licenciamento'), 'class=form-control');
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
