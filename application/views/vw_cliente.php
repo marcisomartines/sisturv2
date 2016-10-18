@@ -88,7 +88,7 @@ $clientemenu  = "active";
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Cadastrar</button>
+                <button type="button" class="btn btn-primary" onclick="cadastraCliente();"><i class="fa fa-check"></i> Cadastrar</button>
             </div>
         </div>
     </div>
