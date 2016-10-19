@@ -19,7 +19,7 @@
                 echo form_open('home/cadastroValidacaoCliente');
                 ?>
                 <div class='row'>
-                    <div class='col-md-6'>
+                    <div class='col-md-6' id="nomeDiv">
                         <?php
                         echo form_label('Nome: ');
                         echo form_input(['name'=>'nome',

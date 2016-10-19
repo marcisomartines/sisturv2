@@ -23,5 +23,10 @@ class Cliente extends  CI_Controller{
 		$this->clientes->listaCliente();
 	}
 
+	public function cadastrarCliente(){
+		$this->load->library('clientes');
+		$this->clientes->cadastraCliente();
+	}
+
 
 }

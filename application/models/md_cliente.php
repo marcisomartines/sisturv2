@@ -12,4 +12,13 @@ class Md_cliente extends CI_Model
         $cliente = $this->input->post('nome');
         return $this->db->like('nome',$cliente)->get('tb_clients')->result_array();
     }
+
+    public function cadastraCliente(){
+        $dados =[
+            "nome" =>,
+            "rua"=>,
+            "bairro"=>,
+            ""
+        ]
+    }
 }

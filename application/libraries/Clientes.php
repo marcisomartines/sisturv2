@@ -40,4 +40,8 @@ class Clientes
         $html .= "</table>";
         echo $html;
     }
+
+    public function cadastraCliente(){
+        
+    }
 }
