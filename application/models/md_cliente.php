@@ -15,10 +15,10 @@ class Md_cliente extends CI_Model
 
     public function cadastraCliente(){
         $dados =[
-            "nome" =>,
-            "rua"=>,
-            "bairro"=>,
-            ""
-        ]
+            "nome" =>'',
+            "rua"=>'',
+            "bairro"=>'',
+            ""=>''
+        ];
     }
 }

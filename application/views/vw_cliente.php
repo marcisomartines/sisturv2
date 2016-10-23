@@ -20,6 +20,7 @@ $clientemenu  = "active";
 <!-- END LEFT MENU -->
 <!-- INICIO CONTEUDO -->
 <div class="content-wrapper" id="conteudo">
+
     <!-- CONTEUDO -->
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -35,6 +36,16 @@ $clientemenu  = "active";
 
     <!-- Main content -->
     <section class="content">
+        <!--ALERTAS-->
+        <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertCadastroSucesso">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <i class="icon fa fa-ban"></i> Erro ao cadastrar cliente!
+        </div>
+
+        <div class="alert alert-success alert-dismissable" style="display: none;" id="alertCadastroFalha">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <i class="icon fa fa-check"></i> Cliente cadastrado com sucesso!
+        </div>
         <!-- Main row -->
         <div class="row">
             <div class="col-md-3">
