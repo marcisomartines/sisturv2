@@ -39,7 +39,21 @@ function cadastraCliente(){
             data: dados,
             success: function (data) {
                     $('#myModal').modal('toggle');
-                    $('#alertCadastroSucesso').show();
+                    $('#alertCadastroSucesso').show('');
+                //limpando campos
+                    $('#nome').val('');
+                    $('#data_nascimento').val('');
+                    $('#sexo').val('');
+                    $('#rg').val('');
+                    $('#cpf').val('');
+                    $('#email').val('');
+                    $('#telefone').val('');
+                    $('#celular').val('');
+                    $('#rua').val('');
+                    $('#bairro').val('');
+                    $('#cidade').val('');
+                    $('#loc_embarque').val('');
+                    $('#observacao').val('');
             },
             error: function(data){
                 $('#alertCadastroFalha').show();
