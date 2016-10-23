@@ -38,7 +38,11 @@ function cadastraCliente(){
             type: 'POST',
             data: dados,
             success: function (data) {
-
+                    $('#myModal').modal('toggle');
+                    $('#alertCadastroSucesso').show();
+            },
+            error: function(data){
+                $('#alertCadastroFalha').show();
             }
         });
     }

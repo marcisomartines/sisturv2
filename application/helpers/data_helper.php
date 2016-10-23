@@ -47,3 +47,11 @@ function dataMes($mes){
 
     return $mes;
 }
+
+function dataBanco($data){
+    return implode("-", array_reverse(explode("/", $data)));
+}
+
+function dataImpressao($data){
+    return implode("/", array_reverse(explode("-", $data)));
+}

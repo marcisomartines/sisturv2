@@ -41,7 +41,7 @@ class Clientes
         echo $html;
     }
 
-    public function cadastraCliente(){
-        
-    }
+//    public function cadastraCliente(){
+//        $this->CI->load->model('md_cliente');
+//    }
 }

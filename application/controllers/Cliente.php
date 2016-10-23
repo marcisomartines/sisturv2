@@ -8,7 +8,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cliente extends  CI_Controller{
+class Cliente extends CI_Controller{
 
     public function index(){
         $this->load->view('vw_cliente');
@@ -24,8 +24,8 @@ class Cliente extends  CI_Controller{
 	}
 
 	public function cadastrarCliente(){
-		$this->load->library('clientes');
-		$this->clientes->cadastraCliente();
+		$this->load->model('md_cliente');
+		$this->md_cliente->cadastraCliente();
 	}
 
 
