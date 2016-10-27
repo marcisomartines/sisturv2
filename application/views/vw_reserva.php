@@ -38,11 +38,12 @@ $reserva  = "active";
         <!-- Main row -->
         <div class="row">
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
+
                 <?php
                 $viagens = $this->viagem->viagens();
                 foreach($viagens as $via){
                     ?>
+            <section class="col-lg-5 connectedSortable">
                     <div class="box box-solid">
                         <div class="box-header">
                             <i class="fa fa-th"></i>
@@ -96,10 +97,11 @@ $reserva  = "active";
                             <!--fim tabela-->
                         </div><!-- /.box-body -->
                     </div>
+            </section><!-- right col -->
                     <?php
                 }
                 ?>
-            </section><!-- right col -->
+
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
