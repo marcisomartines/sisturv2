@@ -8,8 +8,9 @@
 ?>
 <div>
     <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#fisico" role="tab" data-toggle="tab">Pessoa Física</a></li>
-        <li><a href="#juridica" role="tab" data-toggle="tab">Pessoa Jurídica</a></li>
+        <li id='fisicoTab' class="active"><a href="#fisico" role="tab" data-toggle="tab" onclick="$('#tipo_cadastro').val(0);">Pessoa Física</a></li>
+        <li id='juridicoTab'><a href="#juridica" role="tab" data-toggle="tab" onclick="$('#tipo_cadastro').val(1);">Pessoa Jurídica</a></li>
+        <input type="hidden" id="tipo_cadastro" value="0" />
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="fisico"><!--Listagem de agendamentos-->
@@ -147,9 +148,9 @@
 
                 echo validation_errors();
                 echo "<div class='row'>";
-                echo "<div class='col-md-6'>";
+                echo "<div class='col-md-6' id='razaoDiv'>";
                 echo form_label('Razão Social: ');
-                echo "<input type='text' name='nome' id='nome' class='form-control input-sm'>";
+                echo "<input type='text' name='nomej' id='nomej' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-6'>";
                 echo form_label('Responsável: ');
@@ -163,7 +164,7 @@
                 echo '</div>';
                 echo "<div class='col-md-5'>";
                 echo form_label('E-mail: ');
-                echo "<input type='text' name='email' id='email' class='form-control input-sm'>";
+                echo "<input type='text' name='emailj' id='emailj' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-2'>";
                 echo form_label('Telefone: ');
@@ -177,15 +178,15 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-6'>";
                 echo form_label('Rua: ');
-                echo "<input type='text' name='rua' id='rua' class='form-control input-sm'>";
+                echo "<input type='text' name='ruaj' id='ruaj' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-3'>";
                 echo form_label('Bairro: ');
-                echo "<input type='text' name='bairro' id='bairro' class='form-control input-sm'>";
+                echo "<input type='text' name='bairroj' id='bairroj' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-3'>";
                 echo form_label('Cidade: ');
-                echo "<input type='text' name='cidade' id='cidade' class='form-control input-sm'>";
+                echo "<input type='text' name='cidadej' id='cidadej' class='form-control input-sm'>";
                 echo '</div>';
                 echo "</div>";
                 echo "<div class='row'>";
@@ -236,10 +237,7 @@
                 echo form_label('E-mail: ');
                 echo "<input type='text' name='cont_email3' id='cont_email3' class='form-control input-sm'>";
                 echo '</div>';
-                echo "</div>";
-//                echo "<br>";
-//                echo '<input type="submit" class="btn btn-primary" value="Cadastrar">';
-
+                echo "</div>"; 
                 echo form_close();
                 ?>
                     </div>
