@@ -34,3 +34,5 @@
 <script src="<?=base_url()?>dist/js/demo.js"></script>
 <script src="<?=base_url()?>bootstrap/js/teste.js"></script>
 <script src="<?=base_url()?>dist/js/funcoes.js"></script>
+<script src="<?=base_url()?>dist/js/jquery.mask.min.js"></script>
+<script src="<?=base_url()?>dist/js/jquery-ui.js"></script>

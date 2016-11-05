@@ -246,3 +246,17 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+        $('#cpf').mask('000.000.000-00', {placeholder: "___.___.___-__"});
+        $('#telefone').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#celular').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#data_nascimento').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#cnpj').mask('00.000.000/0000-00', {placeholder: "__.___.___/____-__"});
+        $('#telefonej').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#celularj').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#cont_tel1').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#cont_tel2').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+        $('#cont_tel3').mask('(00)0000-0000', {placeholder: "(__)____-____"});
+    });
+</script>

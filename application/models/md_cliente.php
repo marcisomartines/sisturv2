@@ -10,7 +10,7 @@ class Md_cliente extends CI_Model
 {
     public function listaCliente(){
         $cliente = $this->input->post('nome');
-        return $this->db->like('nome',$cliente)->get('tb_clients')->result_array();
+        return $this->db->limit(10,0)->like('nome',$cliente)->order_by('nome','ASC')->get('tb_clients')->result_array();
     }
 
     public function cadastraCliente(){
