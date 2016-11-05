@@ -25,6 +25,7 @@
                         echo form_label('Nome: ');
                         echo form_input(['name'=>'nome',
                                         'id'=>'nome',
+                                        'style'=>'text-transform: uppercase;',
                                         'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -95,6 +96,7 @@
                         echo form_label('Rua: ');
                         echo form_input(['name'=>'rua',
                             'id'=>'rua',
+                            'style'=>'text-transform: uppercase;',
                             'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -103,6 +105,7 @@
                         echo form_label('Bairro: ');
                         echo form_input(['name'=>'bairro',
                             'id'=>'bairro',
+                            'style'=>'text-transform: uppercase;',
                             'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -111,6 +114,7 @@
                         echo form_label('Cidade: ');
                         echo form_input(['name'=>'cidade',
                             'id'=>'cidade',
+                            'style'=>'text-transform: uppercase;',
                             'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -119,6 +123,7 @@
                         echo form_label('Local de Embarque: ');
                         echo form_input(['name'=>'loc_embarque',
                             'id'=>'loc_embarque',
+                            'style'=>'text-transform: uppercase;',
                             'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -129,6 +134,7 @@
                         echo form_label('Observação: ');
                         echo form_input(['name'=>'observacao',
                             'id'=>'observacao',
+                            'style'=>'text-transform: uppercase;',
                             'class'=>'form-control input-sm']);
                         ?>
                     </div>
@@ -150,11 +156,11 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-6' id='razaoDiv'>";
                 echo form_label('Razão Social: ');
-                echo "<input type='text' name='nomej' id='nomej' class='form-control input-sm'>";
+                echo "<input type='text' name='nomej' id='nomej' style='text-transform: uppercase;' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-6'>";
                 echo form_label('Responsável: ');
-                echo "<input type='text' name='responsavel' id='responsavel' class='form-control input-sm'>";
+                echo "<input type='text' name='responsavel' style='text-transform: uppercase;' id='responsavel' class='form-control input-sm'>";
                 echo '</div>';
                 echo '</div>';
                 echo "<div class='row'>";
@@ -178,15 +184,15 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-6'>";
                 echo form_label('Rua: ');
-                echo "<input type='text' name='ruaj' id='ruaj' class='form-control input-sm'>";
+                echo "<input type='text' name='ruaj' style='text-transform: uppercase;' id='ruaj' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-3'>";
                 echo form_label('Bairro: ');
-                echo "<input type='text' name='bairroj' id='bairroj' class='form-control input-sm'>";
+                echo "<input type='text' name='bairroj' style='text-transform: uppercase;' id='bairroj' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-3'>";
                 echo form_label('Cidade: ');
-                echo "<input type='text' name='cidadej' id='cidadej' class='form-control input-sm'>";
+                echo "<input type='text' name='cidadej' id='cidadej' style='text-transform: uppercase;' class='form-control input-sm'>";
                 echo '</div>';
                 echo "</div>";
                 echo "<div class='row'>";
@@ -199,7 +205,7 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-5'>";
                 echo form_label('Nome: ');
-                echo "<input type='text' name='contato1' id='contato1' class='form-control input-sm'>";
+                echo "<input type='text' name='contato1' style='text-transform: uppercase;' id='contato1' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-2'>";
                 echo form_label('Telefone: ');
@@ -213,7 +219,7 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-5'>";
                 echo form_label('Nome: ');
-                echo "<input type='text' name='contato2' id='contato2' class='form-control input-sm'>";
+                echo "<input type='text' name='contato2' style='text-transform: uppercase;' id='contato2' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-2'>";
                 echo form_label('Telefone: ');
@@ -227,7 +233,7 @@
                 echo "<div class='row'>";
                 echo "<div class='col-md-5'>";
                 echo form_label('Nome: ');
-                echo "<input type='text' name='contato3' id='contato3' class='form-control input-sm'>";
+                echo "<input type='text' name='contato3' style='text-transform: uppercase;' id='contato3' class='form-control input-sm'>";
                 echo '</div>';
                 echo "<div class='col-md-2'>";
                 echo form_label('Telefone: ');
