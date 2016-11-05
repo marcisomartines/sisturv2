@@ -46,6 +46,16 @@ $clientemenu  = "active";
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <i class="icon fa fa-check"></i> Cliente cadastrado com sucesso!
         </div>
+
+        <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertEditaFalha">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <i class="icon fa fa-ban"></i> Erro ao editar cliente!
+        </div>
+
+        <div class="alert alert-success alert-dismissable" style="display: none;" id="alertEditaSucesso">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <i class="icon fa fa-check"></i> Cliente editado com sucesso!
+        </div>
         <!-- Main row -->
         <div class="row">
             <div class="col-md-3">
@@ -66,15 +76,11 @@ $clientemenu  = "active";
                     "onclick"=>"buscaCliente();"
                 ));
 
-//                echo form_button(array(
-//                    'class'=>'btn btn-success',
-//                    'content'=>"<i class='fa fa-search-plus'></i> Ver todos"
-//                ));
-
                 echo form_button(array(
                     'class'=>'btn bg-purple',
                     "data-toggle"=>"modal",
                     "data-target"=>"#myModal",
+                    "onclick"=>"$('#acao_cadastro').val(1);",
                     'content'=>"<i class='fa fa-plus'></i> Cadastrar Cliente"
                 ));
                 ?>
@@ -86,7 +92,7 @@ $clientemenu  = "active";
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
-<!-- Modal -->
+<!-- Modal Cadastro -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -95,11 +101,11 @@ $clientemenu  = "active";
                 <h4 class="modal-title" id="myModalLabel">Cadastrar Cliente</h4>
             </div>
             <div class="modal-body">
-               <?php include_once('modal/vw_clienteModal.php'); ?>
+               <?php include('modal/vw_clienteModal.php'); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" onclick="cadastraCliente();"><i class="fa fa-check"></i> Cadastrar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="limpaCliente();">Fechar</button>
+                <button type="button" class="btn btn-primary" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>

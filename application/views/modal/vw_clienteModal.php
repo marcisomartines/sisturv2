@@ -11,14 +11,13 @@
         <li id='fisicoTab' class="active"><a href="#fisico" role="tab" data-toggle="tab" onclick="$('#tipo_cadastro').val(0);">Pessoa Física</a></li>
         <li id='juridicoTab'><a href="#juridica" role="tab" data-toggle="tab" onclick="$('#tipo_cadastro').val(1);">Pessoa Jurídica</a></li>
         <input type="hidden" id="tipo_cadastro" value="0" />
+        <input type="hidden" id="acao_cadastro" value="1" />
+        <input type="hidden" id="id_cliente" name="id_cliente" />
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="fisico"><!--Listagem de agendamentos-->
             <div class="row">
                 <div class="col-md-12">
-                <?php
-                echo form_open('home/cadastroValidacaoCliente');
-                ?>
                 <div class='row'>
                     <div class='col-md-6' id="nomeDiv">
                         <?php
@@ -139,9 +138,7 @@
                         ?>
                     </div>
                 </div>
-                <?php
-                echo form_close();
-                ?>
+
                 <!--Fim da Panel verde-->
                 </div>
             </div>
@@ -150,8 +147,6 @@
             <div class="row">
                 <div class="col-md-12">
                 <?php
-                echo form_open('home/cadastroValidacaoClienteJuridico');
-
                 echo validation_errors();
                 echo "<div class='row'>";
                 echo "<div class='col-md-6' id='razaoDiv'>";
@@ -243,8 +238,7 @@
                 echo form_label('E-mail: ');
                 echo "<input type='text' name='cont_email3' id='cont_email3' class='form-control input-sm'>";
                 echo '</div>';
-                echo "</div>"; 
-                echo form_close();
+                echo "</div>";
                 ?>
                     </div>
                 <!--Fim da Panel verde-->

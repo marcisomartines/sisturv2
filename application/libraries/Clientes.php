@@ -34,16 +34,16 @@ class Clientes
             $html .= '<td>'.$cli['telefone'].'</td>';
             $html .= '<td>'.$cli['celular'].'</td>';
             $html .= '<td>'.$cli['loc_embarque'].'</td>';
-            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" onclick="editaCliente('.$cli['id_clients'].');"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" onclick="editaBuscaCliente('.$cli['id_clients'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
             $html .= '</tr>';
         }
         $html .= "</table>";
         echo $html;
     }
 
-    public function editaCliente(){
+    public function editaBuscaCliente(){
         $this->CI->load->model('md_cliente');
-        $cliente = $this->CI->md_cliente->editaCliente();
+        $cliente = $this->CI->md_cliente->editaBuscaCliente();
 
         echo json_encode($cliente);
     }
