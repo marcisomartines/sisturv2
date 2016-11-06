@@ -14,4 +14,24 @@ class Destino extends CI_Controller
         $this->load->library('destino');
         $this->load->view('vw_destino');
     }
+
+    public function cadastrarDestino(){
+        $this->load->model('md_destino');
+        $this->md_destino->cadastraDestino();
+    }
+
+    public function editarDestino(){
+        $this->load->model('md_destino');
+        $this->md_destino->editaDestino();
+    }
+
+    public function editarBusca(){
+        $this->load->library('clientes');
+        $this->clientes->editaBuscaCliente();
+    }
+
+    public function editarBuscaDestino(){
+        $this->load->library('viagem');
+        $this->viagem->editaBuscaDestino();
+    }
 }

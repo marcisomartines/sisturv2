@@ -104,7 +104,7 @@ $clientemenu  = "active";
                <?php include('modal/vw_clienteModal.php'); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="limpaCliente();">Fechar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="limpaCliente();"><i class="fa fa-close"></i> Fechar</button>
                 <button type="button" class="btn btn-primary" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>

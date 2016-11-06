@@ -34,7 +34,25 @@ $destinos =  $this->viagem->destinos();
             <li class="active">Lista</li>
         </ol>
     </section>
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertCadastroFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao cadastrar destino!
+    </div>
 
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertCadastroSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Destino cadastrado com sucesso!
+    </div>
+
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertEditaFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao editar destino!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertEditaSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Destino editado com sucesso!
+    </div>
     <!-- Main content -->
     <section class="content">
         <!-- Main row -->
@@ -44,6 +62,7 @@ $destinos =  $this->viagem->destinos();
                     echo form_button([
                         "class"       =>"btn bg-purple",
                         "content"     =>"<i class='fa fa-plus'></i> Cadastrar Destino",
+                        "onclick"     =>"$('#acao_cadastro').val(1);",
                         "data-toggle" =>"modal",
                         "data-target" =>'#cadastrarDestino']);
                 ?> 
@@ -61,6 +80,7 @@ $destinos =  $this->viagem->destinos();
                         echo form_button(array(
                             'class'       => 'btn btn-primary',
                             'id'          => $des['id_viagem'],
+                            'onclick'     => 'editaBuscaDestino('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);',
                             'content'     => "<i class='fa fa-pencil-square-o'></i> Editar",
                             "data-toggle" =>"modal",
                             "data-target" =>'#cadastrarDestino'
@@ -76,7 +96,7 @@ $destinos =  $this->viagem->destinos();
 </div>
 
 <!-- Modal -->
-<?php include_once "modal/vw_destinoModal.php"; ?>
+<?php include "modal/vw_destinoModal.php"; ?>
 <!-- FIM MODAL -->
 <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->

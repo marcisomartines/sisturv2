@@ -37,4 +37,11 @@ class Viagem
         
         return $destino;
     }
+
+    public function editaBuscaDestino(){
+        $this->CI->load->model('md_destino');
+        $destino = $this->CI->md_destino->editaBuscaDestino();
+
+        echo json_encode($destino);
+    }
 }

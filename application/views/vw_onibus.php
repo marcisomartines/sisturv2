@@ -76,7 +76,7 @@ $listaOnibus =  $this->carros->listarOnibus();
 </div>
 
 <!-- Modal -->
-<?php include_once "modal/vw_onibusModal.php"; ?>
+<?php include "modal/vw_onibusModal.php"; ?>
 <!-- FIM MODAL -->
 <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->

@@ -16,4 +16,21 @@ class Md_destino extends CI_Model
         return $destino;
     }
 
+    public function cadastraDestino(){
+        $dados =[
+            "destino" => strtoupper($this->input->post('destino')),
+        ];
+        $this->db->insert('tb_viagem',$dados);
+    }
+
+    public function editaDestino(){
+        $dados =[
+            "destino"              => strtoupper($this->input->post('nome'))
+        ];
+        $this->db->where('id_viagem', $this->input->post('id_viagem'))->update('tb_viagem', $dados);
+    }
+
+    public function editaBuscaDestino(){
+        return $this->db->where('id_viagem',$this->input->post('id_viagem'))->get('tb_viagem')->result_array();
+    }
 }

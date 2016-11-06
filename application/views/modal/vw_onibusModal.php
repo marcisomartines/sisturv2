@@ -77,11 +77,6 @@
                                 <input type='text' name='seguro_final' id='seguro_final' class='form-control input-sm'>
                             </div>
 
-<!--                            <div class='col-md-1'>-->
-<!--                                --><?//=form_label('Valor KM: ')?>
-<!--                                <input type='text' name='valorkm' id='valorkm' class='form-control input-sm'>-->
-<!--                            </div>-->
-
                             <div class='col-md-2'>
                                 <?php
                                 echo form_label('Licenciamento: ');
@@ -105,10 +100,24 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Limpar</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Cadastrar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+        $('#placa').mask('AAA-0000', {placeholder: "___-____"});
+        $('#ano').mask('0000/0000', {placeholder: "____/____"});
+        $('#chassis').mask('AAAAAAAAAAAAAAAAA');
+        $('#antt').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#agepan').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#vistec').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#inmetro').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#seguro_inicio').mask('00/00/0000', {placeholder: "__/__/____"});
+        $('#seguro_final').mask('00/00/0000', {placeholder: "__/__/____"});
+    });
+</script>
