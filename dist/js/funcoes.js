@@ -42,6 +42,8 @@ function cadastraCliente(){
                 success: function (data) {
                     $('#myModal').modal('toggle');
                     $('#alertCadastroSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
                     //limpando campos
                     $('#nome').val('');
                     $('#data_nascimento').val('');
@@ -99,6 +101,8 @@ function cadastraCliente(){
                 success: function (data) {
                     $('#myModal').modal('toggle');
                     $('#alertCadastroSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
                     //limpando campos
                     $('#nomej').val('');
                     $('#emailj').val('');
@@ -121,6 +125,8 @@ function cadastraCliente(){
                 },
                 error: function (data) {
                     $('#alertCadastroFalha').show();
+                    $('#clienteLista').html("");
+                    $("#course").val('')
                 }
             });
         }
@@ -176,6 +182,7 @@ function editaBuscaCliente(id_client){
                 $('#rua').val(cliente[0].rua);
                 $('#bairro').val(cliente[0].bairro);
                 $('#cidade').val(cliente[0].cidade);
+                $('#observacao').val(cliente[0].observacao);
                 $('#loc_embarque').val(cliente[0].loc_embarque);
             }
         }
@@ -214,6 +221,8 @@ function editaCliente(){
                 success: function (data) {
                     $('#myModal').modal('toggle');
                     $('#alertEditaSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
                     //limpando campos
                     $('#nome').val('');
                     $('#data_nascimento').val('');
@@ -272,6 +281,8 @@ function editaCliente(){
                 success: function (data) {
                     $('#myModal').modal('toggle');
                     $('#alertCadastroSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
                     //limpando campos
                     $('#nomej').val('');
                     $('#emailj').val('');
