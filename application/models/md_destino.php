@@ -33,4 +33,8 @@ class Md_destino extends CI_Model
     public function editaBuscaDestino(){
         return $this->db->where('id_viagem',$this->input->post('id_viagem'))->get('tb_viagem')->result_array();
     }
+
+    public function listaDestino(){
+        return $this->db->get('tb_viagem')->result_array();
+    }
 }

@@ -34,4 +34,9 @@ class Destino extends CI_Controller
         $this->load->library('viagem');
         $this->viagem->editaBuscaDestino();
     }
+
+    public function listaDestino(){
+        $this->load->library('viagem');
+        $this->viagem->listaDestino();
+    }
 }

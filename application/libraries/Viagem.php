@@ -44,4 +44,21 @@ class Viagem
 
         echo json_encode($destino);
     }
+
+    public function listaDestino(){
+        $this->CI->load->model('md_destino');
+        $destino = $this->CI->md_destino->listaDestino();
+
+        $html = ' <table class="table table-hover">';
+        $html .= '<th>Nome</th>';
+        $html .= '<th>Ação</th>';
+        foreach($destino as $des){
+            $html .= '<tr>';
+            $html .= '<td>'.$des['destino'].'</td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarDestino" onclick="editaBuscaCliente('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '</tr>';
+        }
+        $html .= "</table>";
+        echo $html;
+    }
 }

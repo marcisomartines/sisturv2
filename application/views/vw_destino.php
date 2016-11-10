@@ -65,8 +65,9 @@ $destinos =  $this->viagem->destinos();
                         "onclick"     =>"$('#acao_cadastro').val(1);",
                         "data-toggle" =>"modal",
                         "data-target" =>'#cadastrarDestino']);
-                ?> 
-            <table class="table table-striped">
+                ?>
+                <div id="destinoLista">
+            <table class="table table-hover">
                 <tr>
                     <th>Nome</th>
                     <th>Ação</th>
@@ -91,6 +92,7 @@ $destinos =  $this->viagem->destinos();
             }
             ?>
             </table>
+                </div>
                 </div>
         </div>
 </div>

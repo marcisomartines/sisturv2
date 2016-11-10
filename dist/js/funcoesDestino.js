@@ -20,6 +20,7 @@ function cadastraDestino(){
                 $('#cadastrarDestino').modal('toggle');
                 $('#alertCadastroSucesso').show('');
                 $('#destino').val('');
+                listaDestino();
             },
             error: function(data){
                 $('#myModal').modal('toggle');
@@ -89,4 +90,16 @@ function acaoDestino(){
 function limpaDestino(){
     $('#destino').val('');
     $('#id_viagem').val('');
+}
+
+function listaDestino(){
+    $.ajax({
+        url: 'listaDestino',
+        type: 'POST',
+        success: function(data){
+            $('#destinoLista').html("");
+            $('#destinoLista').html(data);
+        }
+    });
+    return false;
 }
