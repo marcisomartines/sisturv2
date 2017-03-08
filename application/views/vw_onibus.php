@@ -42,10 +42,11 @@ $listaOnibus =  $this->carros->listarOnibus();
             <div class="col-lg-12">
                 <?php
                 echo form_button([
-                    "class"       =>"btn bg-purple",
-                    "content"     =>"<i class='fa fa-plus'></i> Cadastrar Ônibus",
-                    "data-toggle" =>"modal",
-                    "data-target" =>'#cadastrarOnibus']);
+                    "class"       => "btn bg-purple",
+                    "content"     => "<i class='fa fa-plus'></i> Cadastrar Ônibus",
+                    "data-toggle" => "modal",
+                    "onclick"     => "$('#acao_cadastro').val(1);limpaDestino();",
+                    "data-target" => '#cadastrarOnibus']);
                 ?>
                 <table class="table table-striped">
                     <tr>

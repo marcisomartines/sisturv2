@@ -3,6 +3,15 @@ function buscaCliente(){
         url: 'buscaCliente',
         type: 'POST',
         data: {nome: $("#course").val()},
+        beforeSend : function() {
+            $.blockUI({
+                message: 'Carregando...',
+                baseZ: 2000
+            });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
         success: function(data){ 
             $('#clienteLista').html("");
             $('#clienteLista').html(data);
@@ -143,6 +152,15 @@ function editaBuscaCliente(id_client){
         url: 'editarBuscaCliente',
         type: 'POST',
         data: dados,
+        beforeSend : function() {
+            $.blockUI({
+                message: 'Carregando...',
+                baseZ: 2000
+            });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
         success: function(data){
             var cliente = JSON.parse(data);
             $('#id_cliente').val(cliente[0].id_clients);
@@ -352,3 +370,4 @@ function limpaCliente(){
     $('#cont_email2').val('');
     $('#cont_email3').val('');
 }
+$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);

@@ -15,8 +15,8 @@ class Md_cliente extends CI_Model
 
     public function cadastraCliente(){
         $dados =[
-            "nome"              => strtoupper($this->input->post('nome')),
-            'data_nascimento'   => dataBanco($this->input->post('data_nascimento')),
+            "nome"            => strtoupper($this->input->post('nome')),
+            'data_nascimento' => dataBanco($this->input->post('data_nascimento')),
             'sexo'              => $this->input->post('sexo'),
             'rg'                => $this->input->post('rg'),
             'cpf'               => $this->input->post('cpf'),
@@ -76,11 +76,32 @@ class Md_cliente extends CI_Model
     }
 
     public function editaBuscaCliente(){
-        return $this->db->select("id_clients,nome,rua,bairro,cidade,loc_embarque,
-            telefone,celular,DATE_FORMAT(data_nascimento,'%d/%m/%Y') as data_nascimento,
-            sexo,observacao,cpf,rg,
-            email,tipo_cliente,contato1,cont_tel1,cont_email1,
-            contato2,cont_tel2,cont_email2,contato3,cont_tel3,cont_email3,
-            responsavel,cnpj")->where('id_clients',$this->input->post('id_clients'))->get('tb_clients')->result_array();
+        return $this->db->select(
+            "id_clients,
+            nome,
+            rua,
+            bairro,
+            cidade,
+            loc_embarque,
+            telefone,
+            celular,
+            DATE_FORMAT(data_nascimento,'%d/%m/%Y') as data_nascimento,
+            sexo,
+            observacao,
+            cpf,
+            rg,
+            email,
+            tipo_cliente,
+            contato1,
+            cont_tel1,
+            cont_email1,
+            contato2,
+            cont_tel2,
+            cont_email2,
+            contato3,
+            cont_tel3,
+            cont_email3,
+            responsavel,
+            cnpj")->where('id_clients',$this->input->post('id_clients'))->get('tb_clients')->result_array();
     }
 }

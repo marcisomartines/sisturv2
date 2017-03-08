@@ -80,14 +80,13 @@ $clientemenu  = "active";
                     'class'=>'btn bg-purple',
                     "data-toggle"=>"modal",
                     "data-target"=>"#myModal",
-                    "onclick"=>"$('#acao_cadastro').val(1);",
+                    "onclick"=>"$('#acao_cadastro').val(1);limpaCliente();",
                     'content'=>"<i class='fa fa-plus'></i> Cadastrar Cliente"
                 ));
                 ?>
             </div>
         </div>
         <div class="col-lg-12" id="clienteLista">
-
         </div>
         </div>
         <!-- FIM CONTEUDO -->

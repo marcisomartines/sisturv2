@@ -48,7 +48,7 @@ function editaBuscaDestino(id_viagem){
     });
 }
 
-function editaCliente(){
+function editaDestino(){
     if($('#tipo_cadastro').val()==0 ) {//pessoa fisica
         if ($('#destino').val() == '') {
             $('#destinoDiv').addClass('has-error');
