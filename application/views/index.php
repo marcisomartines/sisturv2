@@ -172,7 +172,7 @@
               <div class="box box-solid">
                 <div class="box-header">
                   <i class="fa fa-th"></i>
-                  <h3 class="box-title">Viagens - <?=$via['destino']?></h3>
+                  <h3 class="box-title">Destino - <?=$via['destino']?></h3>
                   <div class="box-tools pull-right">
                     <button class="btn bg-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn bg-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -185,26 +185,7 @@
                   <?php
                   $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
                   foreach($listaViagem as $lista){
-                    $reserva = 0;
-                    $un_res = 0;
-//                    for ($i = 1; $i <= $lista['nr_poltrona']; $i++) {
-//                      $this->db->where('id_tour', $lista['id_tour']);
-//                      $this->db->where('nr_poltrona', $i);
-//                      $livre = $this->db->get('tb_reservs');
-//                      if ($livre->num_rows() > 0) {
-//                        foreach ($livre->result() as $livre)
-//                          if ($livre->tipo == 'i' || $livre->tipo == 'v') {
-//                            $un_res++;
-//                            if ($un_res == 2) {
-//                              $reserva++;
-//                              $un_res = 0;
-//                            }
-//                          }
-//                        if ($livre->tipo == 'd') {
-//                          $reserva++;
-//                        }
-//                      }
-//                    }
+
                     $data_saida = implode("/", array_reverse(explode("-", $lista['data_saida'])));
                     ?>
                     <tr>
@@ -223,11 +204,7 @@
                       </td>
                       <td>
                         <?php
-                        if ($lista['nr_poltrona'] - $reserva > 0) {
-                          echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Disponivel"></form>';
-                        } else {
-                          echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-danger btn-xs" value="Esgotado"></form>';
-                        }
+                          echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Mapa de assentos"></form>';
                         ?>
                       </td>
                     </tr>

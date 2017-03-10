@@ -34,22 +34,22 @@ $reserva  = "active";
     </section>
 
     <!-- Main content -->
-    <section class="content">
+<!--    <section class="content">-->
         <!-- Main row -->
         <div class="row">
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
-
+            <section class="col-lg-5 connectedSortable">
                 <?php
                 $viagens = $this->viagem->viagens();
                 foreach($viagens as $via){
                     ?>
-            <section class="col-lg-5 connectedSortable">
-                    <div class="box box-solid">
+
+                    <div class="col-sm-7 box-solid box collapsed-box">
                         <div class="box-header">
                             <i class="fa fa-th"></i>
-                            <h3 class="box-title">Viagens - <?=$via['destino']?></h3>
+                            <h3 class="box-title">Destinos - <?=$via['destino']?></h3>
                             <div class="box-tools pull-right">
-                                <button class="btn bg-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn bg-default btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></button>
                                 <button class="btn bg-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
@@ -60,9 +60,6 @@ $reserva  = "active";
                                 <?php
                                 $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
                                 foreach($listaViagem as $lista){
-                                    $reserva = 0;
-                                    $un_res = 0;
-
                                     $data_saida = implode("/", array_reverse(explode("-", $lista['data_saida'])));
                                     ?>
                                     <tr>
@@ -81,11 +78,7 @@ $reserva  = "active";
                                         </td>
                                         <td>
                                             <?php
-                                            if ($lista['nr_poltrona'] - $reserva > 0) {
-                                                echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Disponivel"></form>';
-                                            } else {
-                                                echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-danger btn-xs" value="Esgotado"></form>';
-                                            }
+                                                echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Mapa de assentos"></form>';
                                             ?>
                                         </td>
                                     </tr>
@@ -97,11 +90,11 @@ $reserva  = "active";
                             <!--fim tabela-->
                         </div><!-- /.box-body -->
                     </div>
-            </section><!-- right col -->
+
                     <?php
                 }
                 ?>
-
+            </section>
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
