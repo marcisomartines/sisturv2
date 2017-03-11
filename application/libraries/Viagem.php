@@ -55,7 +55,7 @@ class Viagem
         foreach($destino as $des){
             $html .= '<tr>';
             $html .= '<td>'.$des['destino'].'</td>';
-            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarDestino" onclick="editaBuscaCliente('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarDestino" onclick="editaBuscaDestino('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
             $html .= '</tr>';
         }
         $html .= "</table>";

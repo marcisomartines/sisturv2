@@ -2,8 +2,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cadastrar Destino</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" onclick="limpaDestino();">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><b>Cadastrar Destino</b></h4>
       </div>
       <div class="modal-body">
           <input type="hidden" id="acao_cadastro" value="1" />
@@ -24,8 +24,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"  onclick="limpaDestino();"><i class="fa fa-close"></i> Fechar</button>
-        <button type="button" class="btn btn-primary" onclick="acaoDestino();"><i class="fa fa-check"></i> Salvar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"  onclick="limpaDestino();"><i class="fa fa-close"></i> Cancelar</button>
+        <button type="button" class="btn btn-success" onclick="acaoDestino();"><i class="fa fa-check"></i> Salvar</button>
       </div>
     </div>
   </div>

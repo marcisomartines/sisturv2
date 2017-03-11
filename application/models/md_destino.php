@@ -25,7 +25,7 @@ class Md_destino extends CI_Model
 
     public function editaDestino(){
         $dados =[
-            "destino"              => strtoupper($this->input->post('nome'))
+            "destino" => strtoupper($this->input->post('destino'))
         ];
         $this->db->where('id_viagem', $this->input->post('id_viagem'))->update('tb_viagem', $dados);
     }

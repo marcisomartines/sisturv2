@@ -16,6 +16,15 @@ function cadastraDestino(){
             url: 'cadastrarDestino',
             type: 'POST',
             data: dados,
+            beforeSend : function() {
+                $.blockUI({
+                    message: 'Salvando destino...',
+                    baseZ: 2000
+                });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
             success: function (data) {
                 $('#cadastrarDestino').modal('toggle');
                 $('#alertCadastroSucesso').show('');
@@ -23,7 +32,7 @@ function cadastraDestino(){
                 listaDestino();
             },
             error: function(data){
-                $('#myModal').modal('toggle');
+                $('#cadastrarDestino').modal('toggle');
                 $('#alertCadastroFalha').show();
             }
         });
@@ -31,7 +40,7 @@ function cadastraDestino(){
 }
 
 function editaBuscaDestino(id_viagem){
-
+    limpaDestino();
     var dados = {
         id_viagem : id_viagem
     };
@@ -40,6 +49,15 @@ function editaBuscaDestino(id_viagem){
         url: 'editarBuscaDestino',
         type: 'POST',
         data: dados,
+        beforeSend : function() {
+            $.blockUI({
+                message: 'Carregando...',
+                baseZ: 2000
+            });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
         success: function(data){
             var destino = JSON.parse(data);
             $('#id_viagem').val(destino[0].id_viagem);
@@ -49,7 +67,6 @@ function editaBuscaDestino(id_viagem){
 }
 
 function editaDestino(){
-    if($('#tipo_cadastro').val()==0 ) {//pessoa fisica
         if ($('#destino').val() == '') {
             $('#destinoDiv').addClass('has-error');
             $('#destino').focus();
@@ -57,26 +74,36 @@ function editaDestino(){
         } else {
             var dados = {
                 destino: $('#destino').val(),
-                id_cliente: $('#id_viagem').val()
+                id_viagem: $('#id_viagem').val()
             };
 
             $.ajax({
                 url: 'editarDestino',
                 type: 'POST',
                 data: dados,
+                beforeSend : function() {
+                    $.blockUI({
+                        message: 'Salvando destino...',
+                        baseZ: 2000
+                    });
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
                 success: function (data) {
-                    $('#myModal').modal('toggle');
+                    $('#cadastrarDestino').modal('toggle');
                     $('#alertEditaSucesso').show('');
                     //limpando campos
                     $('#destino').val('');
                     $('#id_viagem').val('');
+                    listaDestino();
                 },
                 error: function(data){
+                    $('#cadastrarDestino').modal('toggle');
                     $('#alertEditaFalha').show();
                 }
             });
         }
-    }
 }
 
 function acaoDestino(){
@@ -88,6 +115,7 @@ function acaoDestino(){
 }
 
 function limpaDestino(){
+    fechaMsg();
     $('#destino').val('');
     $('#id_viagem').val('');
 }
@@ -96,6 +124,15 @@ function listaDestino(){
     $.ajax({
         url: 'listaDestino',
         type: 'POST',
+        beforeSend: function(){
+            $.blockUI({
+                message: 'Carregando...',
+                baseZ: 2000
+            });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
         success: function(data){
             $('#destinoLista').html("");
             $('#destinoLista').html(data);

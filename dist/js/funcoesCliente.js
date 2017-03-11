@@ -1,4 +1,5 @@
-function buscaCliente(){
+function buscaCliente(){//PESQUISA DO SITE
+    fechaClienteMsg();
     $.ajax({
         url: 'buscaCliente',
         type: 'POST',
@@ -18,132 +19,11 @@ function buscaCliente(){
         }
     });
     return false;
-}
-
-function cadastraCliente(){
-    if($('#tipo_cadastro').val()==0 ) {//pessoa fisica
-        if ($('#nome').val() == '') {
-            $('#nomeDiv').addClass('has-error');
-            $('#nome').focus();
-            alert('Campo NOME obrigatório');
-        } else {
-            var dados = {
-                nome: $('#nome').val(),
-                data_nascimento: $('#data_nascimento').val(),
-                sexo: $('#sexo').val(),
-                rg: $('#rg').val(),
-                cpf: $('#cpf').val(),
-                email: $('#email').val(),
-                telefone: $('#telefone').val(),
-                celular: $('#celular').val(),
-                rua: $('#rua').val(),
-                bairro: $('#bairro').val(),
-                cidade: $('#cidade').val(),
-                loc_embarque: $('#loc_embarque').val(),
-                observacao: $('#observacao').val(),
-                tipo: $('#tipo_cadastro').val()
-            };
-
-            $.ajax({
-                url: 'cadastrarCliente',
-                type: 'POST',
-                data: dados,
-                success: function (data) {
-                    $('#myModal').modal('toggle');
-                    $('#alertCadastroSucesso').show('');
-                    $('#clienteLista').html("");
-                    $("#course").val('');
-                    //limpando campos
-                    $('#nome').val('');
-                    $('#data_nascimento').val('');
-                    $('#sexo').val('');
-                    $('#rg').val('');
-                    $('#cpf').val('');
-                    $('#email').val('');
-                    $('#telefone').val('');
-                    $('#celular').val('');
-                    $('#rua').val('');
-                    $('#bairro').val('');
-                    $('#cidade').val('');
-                    $('#loc_embarque').val('');
-                    $('#observacao').val('');
-                },
-                error: function(data){
-                    $('#alertCadastroFalha').show();
-                }
-            });
-        }
-    }
-    //pessoa juridica
-    if($('#tipo_cadastro').val()==1) {
-        if ($('#nomej').val() == '') {
-            $('#razaoDiv').addClass('has-error');
-            $('#nomej').focus();
-            alert('Campo RAZÃO SOCIAL obrigatório');
-        } else {
-            var dados = {
-                nome: $('#nomej').val(),
-                email: $('#emailj').val(),
-                telefone: $('#telefonej').val(),
-                celular: $('#celularj').val(),
-                rua: $('#ruaj').val(),
-                bairro: $('#bairroj').val(),
-                cidade: $('#cidadej').val(),
-                responsavel: $('#responsavel').val(),
-                cnpj: $('#cnpj').val(),
-                contato1: $('#contato1').val(),
-                contato2: $('#contato2').val(),
-                contato3: $('#contato3').val(),
-                cont_tel1: $('#cont_tel1').val(),
-                cont_tel2: $('#cont_tel2').val(),
-                cont_tel3: $('#cont_tel3').val(),
-                cont_email1: $('#cont_email1').val(),
-                cont_email2: $('#cont_email2').val(),
-                cont_email3: $('#cont_email3').val(),
-                tipo: $('#tipo_cadastro').val()
-            };
-
-            $.ajax({
-                url: 'cadastrarCliente',
-                type: 'POST',
-                data: dados,
-                success: function (data) {
-                    $('#myModal').modal('toggle');
-                    $('#alertCadastroSucesso').show('');
-                    $('#clienteLista').html("");
-                    $("#course").val('');
-                    //limpando campos
-                    $('#nomej').val('');
-                    $('#emailj').val('');
-                    $('#telefonej').val('');
-                    $('#celularj').val('');
-                    $('#ruaj').val('');
-                    $('#bairroj').val('');
-                    $('#cidadej').val('');
-                    $('#responsavel').val('');
-                    $('#cnpj').val('');
-                    $('#contato1').val('');
-                    $('#contato2').val('');
-                    $('#contato3').val('');
-                    $('#cont_tel1').val('');
-                    $('#cont_tel2').val('');
-                    $('#cont_tel3').val('');
-                    $('#cont_email1').val('');
-                    $('#cont_email2').val('');
-                    $('#cont_email3').val('');
-                },
-                error: function (data) {
-                    $('#alertCadastroFalha').show();
-                    $('#clienteLista').html("");
-                    $("#course").val('')
-                }
-            });
-        }
-    }
-}
+}//PESQUISA DO SITE
 
 function editaBuscaCliente(id_client){
     limpaCliente();
+    fechaClienteMsg();
     var dados = {
         id_clients : id_client
     };
@@ -207,6 +87,146 @@ function editaBuscaCliente(id_client){
     });
 }
 
+function cadastraCliente(){
+    if($('#tipo_cadastro').val()==0 ) {//pessoa fisica
+        if ($('#nome').val() == '') {
+            $('#nomeDiv').addClass('has-error');
+            $('#nome').focus();
+            alert('Campo NOME obrigatório');
+        } else {
+            var dados = {
+                nome: $('#nome').val(),
+                data_nascimento: $('#data_nascimento').val(),
+                sexo: $('#sexo').val(),
+                rg: $('#rg').val(),
+                cpf: $('#cpf').val(),
+                email: $('#email').val(),
+                telefone: $('#telefone').val(),
+                celular: $('#celular').val(),
+                rua: $('#rua').val(),
+                bairro: $('#bairro').val(),
+                cidade: $('#cidade').val(),
+                loc_embarque: $('#loc_embarque').val(),
+                observacao: $('#observacao').val(),
+                tipo: $('#tipo_cadastro').val()
+            };
+
+            $.ajax({
+                url: 'cadastrarCliente',
+                type: 'POST',
+                data: dados,
+                beforeSend : function() {
+                    $.blockUI({
+                        message: 'Salvando cliente...',
+                        baseZ: 2000
+                    });
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
+                success: function (data) {
+                    $('#myModal').modal('toggle');
+                    $('#alertCadastroSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
+                    //limpando campos
+                    $('#nome').val('');
+                    $('#data_nascimento').val('');
+                    $('#sexo').val('');
+                    $('#rg').val('');
+                    $('#cpf').val('');
+                    $('#email').val('');
+                    $('#telefone').val('');
+                    $('#celular').val('');
+                    $('#rua').val('');
+                    $('#bairro').val('');
+                    $('#cidade').val('');
+                    $('#loc_embarque').val('');
+                    $('#observacao').val('');
+                },
+                error: function(data){
+                    $('#alertCadastroFalha').show();
+                }
+            });
+        }
+    }
+    //pessoa juridica
+    if($('#tipo_cadastro').val()==1) {
+        if ($('#nomej').val() == '') {
+            $('#razaoDiv').addClass('has-error');
+            $('#nomej').focus();
+            alert('Campo RAZÃO SOCIAL obrigatório');
+        } else {
+            var dados = {
+                nome: $('#nomej').val(),
+                email: $('#emailj').val(),
+                telefone: $('#telefonej').val(),
+                celular: $('#celularj').val(),
+                rua: $('#ruaj').val(),
+                bairro: $('#bairroj').val(),
+                cidade: $('#cidadej').val(),
+                responsavel: $('#responsavel').val(),
+                cnpj: $('#cnpj').val(),
+                contato1: $('#contato1').val(),
+                contato2: $('#contato2').val(),
+                contato3: $('#contato3').val(),
+                cont_tel1: $('#cont_tel1').val(),
+                cont_tel2: $('#cont_tel2').val(),
+                cont_tel3: $('#cont_tel3').val(),
+                cont_email1: $('#cont_email1').val(),
+                cont_email2: $('#cont_email2').val(),
+                cont_email3: $('#cont_email3').val(),
+                tipo: $('#tipo_cadastro').val()
+            };
+
+            $.ajax({
+                url: 'cadastrarCliente',
+                type: 'POST',
+                data: dados,
+                beforeSend : function() {
+                    $.blockUI({
+                        message: 'Salvando cliente...',
+                        baseZ: 2000
+                    });
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
+                success: function (data) {
+                    $('#myModal').modal('toggle');
+                    $('#alertCadastroSucesso').show('');
+                    $('#clienteLista').html("");
+                    $("#course").val('');
+                    //limpando campos
+                    $('#nomej').val('');
+                    $('#emailj').val('');
+                    $('#telefonej').val('');
+                    $('#celularj').val('');
+                    $('#ruaj').val('');
+                    $('#bairroj').val('');
+                    $('#cidadej').val('');
+                    $('#responsavel').val('');
+                    $('#cnpj').val('');
+                    $('#contato1').val('');
+                    $('#contato2').val('');
+                    $('#contato3').val('');
+                    $('#cont_tel1').val('');
+                    $('#cont_tel2').val('');
+                    $('#cont_tel3').val('');
+                    $('#cont_email1').val('');
+                    $('#cont_email2').val('');
+                    $('#cont_email3').val('');
+                },
+                error: function (data) {
+                    $('#alertCadastroFalha').show();
+                    $('#clienteLista').html("");
+                    $("#course").val('')
+                }
+            });
+        }
+    }
+}
+
 function editaCliente(){
     if($('#tipo_cadastro').val()==0 ) {//pessoa fisica
         if ($('#nome').val() == '') {
@@ -236,6 +256,15 @@ function editaCliente(){
                 url: 'editarCliente',
                 type: 'POST',
                 data: dados,
+                beforeSend : function() {
+                    $.blockUI({
+                        message: 'Salvando cliente...',
+                        baseZ: 2000
+                    });
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
                 success: function (data) {
                     $('#myModal').modal('toggle');
                     $('#alertEditaSucesso').show('');
@@ -296,9 +325,18 @@ function editaCliente(){
                 url: 'editarCliente',
                 type: 'POST',
                 data: dados,
+                beforeSend : function() {
+                    $.blockUI({
+                        message: 'Salvando cliente...',
+                        baseZ: 2000
+                    });
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
                 success: function (data) {
                     $('#myModal').modal('toggle');
-                    $('#alertCadastroSucesso').show('');
+                    $('#alertEditaSucesso').show('');
                     $('#clienteLista').html("");
                     $("#course").val('');
                     //limpando campos
@@ -322,7 +360,7 @@ function editaCliente(){
                     $('#cont_email3').val('');
                 },
                 error: function (data) {
-                    $('#alertCadastroFalha').show();
+                    $('#alertEditaFalha').show();
                 }
             });
         }
@@ -338,6 +376,7 @@ function acaoCliente(){
 }
 
 function limpaCliente() {
+    fechaMsg();
     $('#nome').val('');
     $('#data_nascimento').val('');
     $('#sexo').val('');
@@ -369,4 +408,11 @@ function limpaCliente() {
     $('#cont_email1').val('');
     $('#cont_email2').val('');
     $('#cont_email3').val('');
+}
+
+function fechaMsg(){
+    $('#alertCadastroSucesso').hide();
+    $('#alertEditaSucesso').hide();
+    $('#alertCadastroFalha').hide();
+    $('#alertEditaFalha').hide();
 }
