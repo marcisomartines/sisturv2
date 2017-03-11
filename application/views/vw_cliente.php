@@ -97,14 +97,14 @@ $clientemenu  = "active";
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Cadastrar Cliente</h4>
+                <h4 class="modal-title" id="myModalLabel"><b>Cadastrar Cliente</b></h4>
             </div>
             <div class="modal-body">
                <?php include('modal/vw_clienteModal.php'); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="limpaCliente();"><i class="fa fa-close"></i> Fechar</button>
-                <button type="button" class="btn btn-primary" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="limpaCliente();"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>

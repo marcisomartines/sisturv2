@@ -143,7 +143,7 @@ function cadastraCliente(){
 }
 
 function editaBuscaCliente(id_client){
-
+    limpaCliente();
     var dados = {
         id_clients : id_client
     };
@@ -337,7 +337,7 @@ function acaoCliente(){
     }
 }
 
-function limpaCliente(){
+function limpaCliente() {
     $('#nome').val('');
     $('#data_nascimento').val('');
     $('#sexo').val('');
@@ -370,4 +370,3 @@ function limpaCliente(){
     $('#cont_email2').val('');
     $('#cont_email3').val('');
 }
-$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
