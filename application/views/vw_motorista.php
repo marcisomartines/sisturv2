@@ -35,6 +35,26 @@ $listaMotorista =  $this->carros->listarMotorista();
         </ol>
     </section>
 
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertCadastroFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao cadastrar motorista!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertCadastroSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Motorista cadastrado com sucesso!
+    </div>
+
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertEditaFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao editar motorista!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertEditaSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Motorista editado com sucesso!
+    </div>
+
     <!-- Main content -->
     <section class="content">
         <!-- Main row -->

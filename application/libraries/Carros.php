@@ -57,4 +57,8 @@ class Carros
 
         echo $html;
     }
+
+    public function listaMotorista(){
+        
+    }
 }

@@ -3,10 +3,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Cadastrar Motorista</h4>
+                <h4 class="modal-title" id="myModalLabel"><b>Cadastrar Motorista</b></h4>
             </div>
             <div class="modal-body">
                 <div class="row">
+                <input type="hidden" id="tipo_cadastro" value="0" />
+                <input type="hidden" id="acao_cadastro" value="1" />
+                <input type="hidden" id="id_drivers" name="id_drivers" />
                     <div class="col-md-12">
                         <div class='row'>
                             <div class='col-md-4'>
@@ -16,7 +19,7 @@
 
                             <div class='col-md-2'>
                                 <?=form_label('Data Nasc.: ')?>
-                                <input type='text' name='data_nascimento' id='data_nascimento' class='form-control input-sm'>
+                                <input type='text' name='data_nascimento' data-mask="00/00/0000" placeholder="__/__/____" id='data_nascimento' class='form-control input-sm'>
                             </div>
 
                             <div class='col-md-2'>
@@ -26,7 +29,7 @@
 
                             <div class='col-md-2'>
                                 <?=form_label('CPF: ')?>
-                                <input type='text' name='cpf' id='cpf' class='form-control input-sm'>
+                                <input type='text' name='cpf' id='cpf' data-mask="00.000.000-00" placeholder="__.___.___-__" class='form-control input-sm'>
                             </div>
 
                             <div class='col-md-2'>
@@ -38,7 +41,7 @@
                         <div class='row'>
                             <div class='col-md-2'>
                                 <?= form_label('Validade CNH: ')?>
-                                <input type='text' name='validade_cnh' id='validade_cnh' class='form-control input-sm'>
+                                <input type='text' name='validade_cnh' id='validade_cnh' data-mask="00/00/0000" placeholder="__/__/____" class='form-control input-sm'>
                             </div>
 
                             <div class='col-md-5'>
@@ -48,12 +51,12 @@
 
                             <div class='col-md-2'>
                                 <?= form_label('Telefone: ')?>
-                                <input type='text' name='telefone' id='telefone' class='form-control input-sm' value='67 '>
+                                <input type='text' name='telefone' id='telefone' data-mask="(00) 0000-0000" placeholder="(__) ____-____" class='form-control input-sm' value='67 '>
                             </div>
 
                             <div class='col-md-2'>
                                 <?= form_label('Celular: ')?>
-                                <input type='text' name='celular' id='celular' class='form-control input-sm' value='67 '>
+                                <input type='text' name='celular' id='celular' data-mask="(00) 00000-0000" placeholder="(__) _____-____" class='form-control input-sm' value='67 '>
                             </div>
                         </div>
 
@@ -84,8 +87,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Limpar</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Cadastrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>
