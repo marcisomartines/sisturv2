@@ -34,6 +34,25 @@ $listaOnibus =  $this->carros->listarOnibus();
             <li class="active">Lista</li>
         </ol>
     </section>
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertCadastroFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao cadastrar ônibus!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertCadastroSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Ônibus cadastrado com sucesso!
+    </div>
+
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertEditaFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao editar ônibus!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertEditaSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Ônibus editado com sucesso!
+    </div>
 
     <!-- Main content -->
     <section class="content">
@@ -48,30 +67,32 @@ $listaOnibus =  $this->carros->listarOnibus();
                     "onclick"     => "$('#acao_cadastro').val(1);limpaOnibus();",
                     "data-target" => '#cadastrarOnibus']);
                 ?>
-                <table class="table table-striped">
-                    <tr>
-                    <th>Código</th>
-                    <th>Modelo</th>
-                    <th>N° Poltrona</th>
-                    <th>Placa</th>
-                    <th>Status</th>
-                    <th>Ação</th>
-                    </tr>
-                    <?php
-                    foreach($listaOnibus as $car){
-                    ?>
+                <div id="onibusLista">
+                    <table class="table table-striped">
                         <tr>
-                        <td><?=$car['codigo']?></td>
-                        <td><?=$car['modelo']?></td>
-                        <td><?=$car['nr_poltrona']?></td>
-                        <td><?=$car['placa']?></td>
-                        <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
-                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="editaBuscaOnibus('<?=$car['id_cars']?>');$('#acao_cadastro').val(2);limpaOnibus();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                        <th>Código</th>
+                        <th>Modelo</th>
+                        <th>N° Poltrona</th>
+                        <th>Placa</th>
+                        <th>Status</th>
+                        <th>Ação</th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
+                        <?php
+                        foreach($listaOnibus as $car){
+                        ?>
+                            <tr>
+                            <td><?=$car['codigo']?></td>
+                            <td><?=$car['modelo']?></td>
+                            <td><?=$car['nr_poltrona']?></td>
+                            <td><?=$car['placa']?></td>
+                            <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
+                            <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="editaBuscaOnibus('<?=$car['id_cars']?>');$('#acao_cadastro').val(2);limpaOnibus();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
 </div>
@@ -88,7 +109,7 @@ $listaOnibus =  $this->carros->listarOnibus();
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
-                <button type="button" class="btn btn-success" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-success" onclick="acaoOnibus();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
                     <input type='text' name='codigo' id='codigo' class='form-control input-sm'>
                 </div>
 
-                <div class='col-md-2'>
+                <div class='col-md-3'>
                     <?=form_label('Montadora: ')?>
                     <input type='text' name='montadora' id='montadora' class='form-control input-sm'>
                 </div>
@@ -30,14 +30,11 @@
                     <input type='text' name='placa' id='placa' data-mask="AAA-0000" placeholder="___-____" class='form-control input-sm'>
                 </div>
 
-                <div class='col-md-2'>
+                <div class='col-md-3'>
                     <?=form_label('Chassis: ')?>
                     <input type='text' name='chassis' id='chassis'  data-mask="AAAAAAAAAAAAAAAAA" class='form-control input-sm'>
                 </div>
-
-            </div>
-
-            <div class='row'>
+           
                 <div class='col-md-2'>
                     <?=form_label('N° Poltr.: ')?>
                     <input type='text' name='nr_poltrona' id='nr_poltrona' class='form-control input-sm'>
@@ -66,8 +63,7 @@
                     <?=form_label('Seguro Início: ')?>
                     <input type='text' name='seguro_inicio' id='seguro_inicio' data-mask="00/00/0000" placeholder="__/__/____" class='form-control input-sm'>
                 </div>
-            </div>
-            <div class='row'>
+            
                 <div class='col-md-2'>
                     <?=form_label('Seguro Final: ')?>
                     <input type='text' name='seguro_final' id='seguro_final' data-mask="00/00/0000" placeholder="__/__/____" class='form-control input-sm'>
@@ -92,6 +88,6 @@
                     echo form_dropdown('licenciamento', $opcao, $this->input->post('licenciamento'), "id='licenciamento' class=form-control");
                     ?>
                 </div>
-            </div>
+          
         </div>
     </div>

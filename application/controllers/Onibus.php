@@ -18,4 +18,19 @@ class Onibus extends CI_Controller
         $this->carros->editaBuscaOnibus();
     }
 
+    public function cadastrarOnibus(){
+    	$this->load->model('md_carro');
+    	$this->md_carro->cadastraOnibus();
+    }
+
+    public function editarOnibus(){
+    	$this->load->model('md_carro');
+    	$this->md_carro->editaOnibus();
+    }
+
+    public function listaOnibus(){
+    	$this->load->library('carros');
+    	$this->carros->listaOnibus();
+    }
+
 }
