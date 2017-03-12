@@ -12,4 +12,10 @@ class Onibus extends CI_Controller
         $this->load->library('carros');
         $this->load->view('vw_onibus');
     }
+
+    public function editaBuscaOnibus(){
+        $this->load->library('carros');
+        $this->carros->editaBuscaOnibus();
+    }
+
 }

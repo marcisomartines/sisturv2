@@ -45,7 +45,7 @@ $listaOnibus =  $this->carros->listarOnibus();
                     "class"       => "btn bg-purple",
                     "content"     => "<i class='fa fa-plus'></i> Cadastrar Ônibus",
                     "data-toggle" => "modal",
-                    "onclick"     => "$('#acao_cadastro').val(1);limpaDestino();",
+                    "onclick"     => "$('#acao_cadastro').val(1);limpaOnibus();",
                     "data-target" => '#cadastrarOnibus']);
                 ?>
                 <table class="table table-striped">
@@ -66,7 +66,7 @@ $listaOnibus =  $this->carros->listarOnibus();
                         <td><?=$car['nr_poltrona']?></td>
                         <td><?=$car['placa']?></td>
                         <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
-                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="editaBuscaOnibus('<?=$car['id_cars']?>');$('#acao_cadastro').val(2);limpaOnibus();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
                         </tr>
                     <?php
                     }
@@ -75,9 +75,25 @@ $listaOnibus =  $this->carros->listarOnibus();
             </div>
         </div>
 </div>
-
 <!-- Modal -->
-<?php include "modal/vw_onibusModal.php"; ?>
+<div class="modal fade" id="cadastrarOnibus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><b>Cadastrar Ônibus</b></h4>
+            </div>
+            <div class="modal-body">
+                <?php include('modal/vw_onibusModal.php'); ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- FIM MODAL -->
 <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
@@ -95,6 +111,5 @@ $listaOnibus =  $this->carros->listarOnibus();
 <!-- JAVASCRIPT -->
 <?php include_once "menu/l_js.php"; ?>
 <!-- END JAVASCRIPT -->
-
 </body>
 </html>

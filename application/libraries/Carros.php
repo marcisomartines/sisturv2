@@ -24,4 +24,11 @@ class Carros
         $this->CI->load->model('md_motorista');
         return $this->CI->md_motorista->listarMotorista();
     }
+
+    public function editaBuscaOnibus(){
+        $this->CI->load->model('md_carro');
+        $veiculo = $this->CI->md_carro->editaBuscaOnibus();
+
+        echo json_encode($veiculo);
+    }
 }

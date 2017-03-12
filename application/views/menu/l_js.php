@@ -35,6 +35,7 @@
 <script src="<?=base_url()?>bootstrap/js/teste.js"></script>
 <script src="<?=base_url()?>dist/js/funcoesCliente.js"></script>
 <script src="<?=base_url()?>dist/js/funcoesDestino.js"></script>
+<script src="<?=base_url()?>dist/js/funcoesOnibus.js"></script>
 <script src="<?=base_url()?>dist/js/jquery.mask.min.js"></script>
 <script src="<?=base_url()?>dist/js/jquery-ui.js"></script>
 <script type="text/javascript" src="http://malsup.github.io/jquery.blockUI.js"></script>

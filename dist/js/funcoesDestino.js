@@ -122,7 +122,6 @@ function limpaDestino(){
 
 function listaDestino(){
     $.ajax({
-        url: 'listaDestino',
         type: 'POST',
         beforeSend: function(){
             $.blockUI({
