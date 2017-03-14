@@ -88,7 +88,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
-                <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-success" onclick="acaoMotorista();><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>
