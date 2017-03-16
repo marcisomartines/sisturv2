@@ -12,4 +12,9 @@ class Motorista extends CI_Controller
         $this->load->library('carros');
         $this->load->view('vw_motorista');
     }
+
+    public function editaBuscaMotorista(){
+        $this->load->library('carros');
+        $this->carros->editaBuscaMotorista();
+    }
 }

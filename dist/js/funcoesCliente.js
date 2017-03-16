@@ -1,5 +1,5 @@
 function buscaCliente(){//PESQUISA DO SITE
-    fechaClienteMsg();
+    fechaMsg();
     $.ajax({
         url: 'buscaCliente',
         type: 'POST',
@@ -23,7 +23,7 @@ function buscaCliente(){//PESQUISA DO SITE
 
 function editaBuscaCliente(id_client){
     limpaCliente();
-    fechaClienteMsg();
+    fechaMsg();
     var dados = {
         id_clients : id_client
     };
