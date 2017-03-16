@@ -30,7 +30,7 @@ class Onibus extends CI_Controller
 
     public function listaOnibus(){
     	$this->load->library('carros');
-    	$this->carros->listarOnibus();
+    	$this->carros->listaOnibus();
     }
 
 }

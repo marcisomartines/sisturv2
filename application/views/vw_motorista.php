@@ -65,6 +65,7 @@ $listaMotorista =  $this->carros->listarMotorista();
                     "class"       =>"btn bg-purple",
                     "content"     =>"<i class='fa fa-plus'></i> Cadastrar Motorista",
                     "data-toggle" =>"modal",
+                    "onclick"     => "$('#acao_cadastro').val(1);limpaMotorista();",
                     "data-target" =>'#cadastrarMotorista']);
                 ?>
                 <table class="table table-striped">
@@ -85,7 +86,7 @@ $listaMotorista =  $this->carros->listarMotorista();
                         <td><?=$motorista['telefone']?></td>
                         <td><?=$motorista['celular']?></td>
                         <td><?=$motorista['status']=='A'?'ATIVO':'INATIVO'?></td>
-                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarMotorista"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarMotorista" onclick="editaBuscaMotorista('<?=$motorista['id_drivers']?>');$('#acao_cadastro').val(2);limpaMotorista();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
                         </tr>
                     <?php
                     }

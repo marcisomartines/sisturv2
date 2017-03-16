@@ -17,4 +17,19 @@ class Motorista extends CI_Controller
         $this->load->library('carros');
         $this->carros->editaBuscaMotorista();
     }
+
+    public function cadastrarMotorista(){
+        $this->load->model('md_motorista');
+        $this->md_motorista->cadastraMotorista();
+    }
+
+    public function editarMotorista(){
+        $this->load->model('md_motorista');
+        $this->md_motorista->editaMotorista();
+    }
+
+    public function listaMotorista(){
+        $this->load->library('carros');
+        $this->carros->listaMotorista();
+    }
 }

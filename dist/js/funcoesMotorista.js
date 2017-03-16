@@ -19,26 +19,126 @@
  }
 
  function acaoMotorista(){
-
+     if($('#acao_cadastro').val()==1){
+         cadastraMotorista();
+     }else{
+         editaMotorista();
+     }
  }
 
  function listaMotorista(){
+     $.ajax({
+         url: 'listaMotorista',
+         type: 'POST',
+         beforeSend: function(){
+             $.blockUI({
+                 message: 'Carregando...',
+                 baseZ: 2000
+             });
+         },
+         complete: function () {
+             $.unblockUI();
+         },
+         success: function(data){
+             $('#motoristaLista').html("");
+             $('#motoristaLista').html(data);
+         }
+     });
 
+     return false;
  }
 
  function cadastraMotorista(){
+     var dados = {
+         nome 			 : $('#nome').val(),
+         data_nascimento : $('#data_nascimento').val(),
+         rg				 : $('#rg').val(),
+         cpf			 : $('#cpf').val(),
+         cnh			 : $('#cnh').val(),
+         validade_cnh	 : $('#validade_cnh').val(),
+         email			 : $('#email').val(),
+         telefone		 : $('#telefone').val(),
+         celular		 : $('#celular').val(),
+         rua			 : $('#rua').val(),
+         bairro			 : $('#bairro').val(),
+         cidade			 : $('#cidade').val(),
+         observacao 	 : $('#observacao').val()
+     };
 
+     $.ajax({
+         url: 'cadastrarMotorista',
+         type: 'POST',
+         data: dados,
+         beforeSend : function() {
+             $.blockUI({
+                 message: 'Salvando motorista...',
+                 baseZ: 2000
+             });
+         },
+         complete: function () {
+             $.unblockUI();
+         },
+         success: function (data) {
+             $('#cadastrarMotorista').modal('toggle');
+             $('#alertCadastroSucesso').show();
+             listaMotorista();
+         },
+         error: function(data){
+             $('#cadastrarMotorista').modal('toggle');
+             $('#alertCadastroFalha').show();
+         }
+     });
  }
 
  function editaMotorista(){
+     var dados = {
+         id_driver       : $('#id_driver').val(),
+         nome 			 : $('#nome').val(),
+         data_nascimento : $('#data_nascimento').val(),
+         rg				 : $('#rg').val(),
+         cpf			 : $('#cpf').val(),
+         cnh			 : $('#cnh').val(),
+         validade_cnh	 : $('#validade_cnh').val(),
+         email			 : $('#email').val(),
+         telefone		 : $('#telefone').val(),
+         celular		 : $('#celular').val(),
+         rua			 : $('#rua').val(),
+         bairro			 : $('#bairro').val(),
+         cidade			 : $('#cidade').val(),
+         observacao 	 : $('#observacao').val()
+     };
 
+     $.ajax({
+         url: 'editarMotorista',
+         type: 'POST',
+         data: dados,
+         beforeSend : function() {
+             $.blockUI({
+                 message: 'Salvando motorista...',
+                 baseZ: 2000
+             });
+         },
+         complete: function () {
+             $.unblockUI();
+         },
+         success: function (data) {
+             $('#cadastrarMotorista').modal('toggle');
+             $('#alertEditaSucesso').show('');
+             //limpando campos
+             listaMotorista();
+         },
+         error: function(data){
+             $('#cadastrarMotorista').modal('toggle');
+             $('#alertEditaFalha').show();
+         }
+     });
  }
 
- function editaBuscaMotorista(id_drivers){
-     limpaOnibus();
+ function editaBuscaMotorista(id_driver){
+     limpaMotorista();
 
      var dados = {
-         id_cars : id_cars
+         id_driver : id_driver
      };
 
      $.ajax({
@@ -57,7 +157,7 @@
          success: function(data){
              var motorista = JSON.parse(data);
 
-             $('#id_driver').val(motorista[0].id_driver);
+             $('#id_driver').val(motorista[0].id_drivers);
              $('#nome').val(motorista[0].nome);
              $('#data_nascimento').val(motorista[0].data_nascimento);
              $('#rg').val(motorista[0].rg);
