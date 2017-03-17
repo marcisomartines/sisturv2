@@ -29,7 +29,7 @@
 
                             <div class='col-md-2'>
                                 <?=form_label('CPF: ')?>
-                                <input type='text' name='cpf' id='cpf' data-mask="00.000.000-00" placeholder="__.___.___-__" class='form-control input-sm'>
+                                <input type='text' name='cpf' id='cpf' data-mask="000.000.000-00" placeholder="___.___.___-__" class='form-control input-sm'>
                             </div>
 
                             <div class='col-md-2'>
@@ -80,7 +80,7 @@
                         <div class='row'>
                             <div class='col-md-12'>
                                 <?= form_label('Observação: ')?>
-                                <input type='text' name='onservacao' id='observacao' class='form-control input-sm'>
+                                <input type='text' name='observacao' id='observacao' class='form-control input-sm'>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
-                <button type="button" class="btn btn-success" onclick="acaoMotorista();><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-success" onclick="acaoMotorista();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>
