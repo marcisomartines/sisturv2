@@ -3,10 +3,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Cadastrar Usuário</h4>
+                <h4 class="modal-title" id="myModalLabel"><b>Cadastrar Usuário</b></h4>
             </div>
             <div class="modal-body">
                 <div class="row">
+                    <input type="hidden" id="tipo_cadastro" value="0" />
+                    <input type="hidden" id="acao_cadastro" value="1" />
+                    <input type="hidden" id="id_users" name="id_users" />
                     <div class="col-md-12">
                         <div class='row'>
                             <div class='col-md-4'>
@@ -40,10 +43,11 @@
                                 <?php
                                 $tipo = array(
                                     '0' => 'Usuário',
-                                    '1' => 'Guia'
+                                    '1' => 'Guia',
+                                    '2' => 'Administrador'
                                 );
                                 echo form_label('Tipo: ');
-                                echo form_dropdown('tipo',$tipo,'0','class=form-control');
+                                echo form_dropdown('tipo',$tipo,'0','id="tipo" class=form-control');
                                 ?>
                             </div>
                         </div>
@@ -51,8 +55,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Limpar</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Cadastrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="acaoUsuario();"><i class="fa fa-check"></i> Salvar</button>
             </div>
         </div>
     </div>

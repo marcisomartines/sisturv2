@@ -66,8 +66,8 @@ class Carros
     }
 
     public function listaMotorista(){
-        $this->CI->load->model('md_carro');
-        $motorista = $this->CI->md_carro->listarMotorista();
+        $this->CI->load->model('md_motorista');
+        $motorista = $this->CI->md_motorista->listarMotorista();
 
         $html = ' <table class="table table-hover">';
         $html .= '<th>Nome</th>';
@@ -83,7 +83,7 @@ class Carros
             $html .= '<td>'.$mot['telefone'].'</td>';
             $html .= '<td>'.$mot['celular'].'</td>';
             $html .= '<td>'.($mot['status']=='A'?'ATIVO':'INATIVO').'</td>';
-            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="limpaMotorista();editaBuscaMotorista('.$mot['id_driver'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="limpaMotorista();editaBuscaMotorista('.$mot['id_drivers'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
             $html .= '</tr>';
         }
         $html .= "</table>";

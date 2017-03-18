@@ -92,7 +92,7 @@
 
  function editaMotorista(){
      var dados = {
-         id_driver       : $('#id_driver').val(),
+         id_driver       : $('#id_drivers').val(),
          nome 			 : $('#nome').val(),
          data_nascimento : $('#data_nascimento').val(),
          rg				 : $('#rg').val(),
@@ -157,7 +157,7 @@
          success: function(data){
              var motorista = JSON.parse(data);
 
-             $('#id_driver').val(motorista[0].id_drivers);
+             $('#id_drivers').val(motorista[0].id_drivers);
              $('#nome').val(motorista[0].nome);
              $('#data_nascimento').val(motorista[0].data_nascimento);
              $('#rg').val(motorista[0].rg);
@@ -170,7 +170,7 @@
              $('#rua').val(motorista[0].rua);
              $('#bairro').val(motorista[0].bairro);
              $('#cidade').val(motorista[0].cidade);
-             $('#observacao').val(motorista[0].observacoes);
+             $('#observacao').val(motorista[0].observacao);
          }
      });
  }

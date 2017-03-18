@@ -13,4 +13,24 @@ class Usuario extends CI_Controller
         $this->load->view('vw_usuario');
     }
 
+    public function editaBuscaUsuario(){
+        $this->load->library('usuarios');
+        $this->carros->editaBuscaUsuario();
+    }
+
+    public function cadastrarUsuario(){
+        $this->load->model('md_usuario');
+        $this->md_usuario->cadastraUsuario();
+    }
+
+    public function editarUsuario(){
+        $this->load->model('md_usuario');
+        $this->md_usuario->editaUsuario();
+    }
+
+    public function listaUsuario(){
+        $this->load->library('usuarios');
+        $this->usuarios->listaUsuario();
+    }
+
 }

@@ -24,7 +24,7 @@ class Md_motorista extends CI_Model
         email,
         telefone,
         celular,
-        rua
+        rua,
         bairro,
         cidade,
         observacao
