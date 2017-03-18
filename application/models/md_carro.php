@@ -75,4 +75,12 @@ class Md_carro extends CI_Model
 
     	$this->db->where('id_cars',$this->input->post('id_cars'))->update('tb_cars',$dados);
     }
+
+    public function onibus(){
+        return $this->db->select("
+        id_cars,
+        modelo,
+        codigo
+        ")->get('tb_cars')->result_array();
+    }
 }

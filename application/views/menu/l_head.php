@@ -8,7 +8,7 @@
 $principal=
 $reserva=
 $clientemenu=
-$agendamento=
+$agenda=
 $onibus=
 $destino=
 $motorista=

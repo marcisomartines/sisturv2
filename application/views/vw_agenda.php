@@ -12,8 +12,7 @@
 <?php
 include_once "menu/l_head.php";
 $agenda  = "active";
-$listaAgenda = '';
-
+$listaAgenda = $this->agendas->listarAgenda();
 ?>
 <!-- END HEAD -->
 <!-- LEFT MENU -->
@@ -80,16 +79,22 @@ $listaAgenda = '';
                             <th>Situação</th>
                             <th>Ação</th>
                         </tr>
-
+                        <?php
+                        foreach($listaAgenda as $agenda){
+                            ?>
                             <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td><?=$agenda['codigo']?></td>
+                                <td><?=$agenda['modelo']?></td>
+                                <td><?=$agenda['destino']?></td>
+                                <td><?=$agenda['data_saida']?></td>
+                                <td><?=$agenda['data_retorno']?></td>
+                                <td><?=$agenda['tipo']?></td>
+                                <td><?=$agenda['status']=='A'?'ATIVO':'INATIVO'?></td>
+                                <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarAgenda" onclick="editaBuscaAgenda('<?=$agenda['id_tour']?>');$('#acao_cadastro').val(2);limpaAgenda();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
                             </tr>
-
+                            <?php
+                        }
+                        ?>
                     </table>
                 </div>
             </div>

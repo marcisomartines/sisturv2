@@ -70,4 +70,11 @@ class Md_motorista extends CI_Model
         ];
         $this->db->where('id_drivers',$this->input->post('id_driver'))->update('tb_drivers',$dados);
     }
+
+    public function motoristas(){
+        return $this->db->select("
+        id_drivers,
+        nome
+        ")->get('tb_drivers')->result_array();
+    }
 }

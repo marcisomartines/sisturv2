@@ -21,45 +21,24 @@
                     <div class="col-md-12">
                         <?php
                         echo "<div class='row'>";
-                        echo "<div class='col-md-4'>";
-                        echo validation_errors();
-                        $this->db->where('tipo_cliente',1);
-                        $query = $this->db->get('tb_clients');
-                        $cliente[] = '';
-                        foreach ($query->result() as $clt) {
-                            $cliente[$clt->id_clients] = $clt->nome;
-                        }
-                        echo form_label('Cliente: ');
-                        echo form_dropdown('id_client', $cliente, 'v', 'class=form-control');
-                        echo '</div>';
                         echo "<div class='col-md-2'>";
-                        $this->db->where('status', 'A');
-                        $query = $this->db->get('tb_cars');
-                        $opcao[] = '';
-                        foreach ($query->result() as $bus) {
-                            $opcao[$bus->id_cars] = $bus->codigo . ' - ' . $bus->modelo;
-                        }
+
                         echo form_label('Ônibus: ');
-                        echo form_dropdown('id_car', $opcao, 'v', 'class=form-control');
+                        echo form_dropdown('id_cars', $this->agendas->onibus(), '', 'id="id_cars" class=form-control');
                         echo '</div>';
-                        $opcao = array(
-                            'v' => 'Viagem',
-                            'f' => 'Fretamento',
-                            't' => 'Turismo',
-                            'e' => 'Escursão'
-                        );
+
                         echo "<div class='col-md-2'>";
                         echo form_label('Tipo: ');
-                        echo form_dropdown('tipo', $opcao, 'v', 'class=form-control');
+                        echo form_dropdown('tipo',  $this->agendas->tipo(), 'v', 'id="tipo" class=form-control');
                         echo '</div>';
-                        $query = $this->db->get('tb_viagem');
-                        $viagem[] = '';
-                        foreach ($query->result() as $vig) {
-                            $viagem[$vig->id_viagem] = $vig->destino;
-                        }
+
                         echo "<div class='col-md-4'>";
                         echo form_label('Destino: ');
-                        echo form_dropdown('id_viagem', $viagem, 'v', 'class=form-control');
+                        echo form_dropdown('id_viagem', $this->agendas->destino(), '', 'id="id_viagem" class=form-control');
+                        echo '</div>';
+                        echo "<div class='col-md-4'>";
+                        echo form_label('Motorista: ');
+                        echo form_dropdown('id_motorista', $this->agendas->motorista(), '', 'id="id_motorista" class=form-control');
                         echo '</div>';
                         echo '</div>';//inicio de uma nova linha
                         echo "<div class='row'>";
@@ -70,16 +49,6 @@
                         echo "<div class='col-md-2'>";
                         echo form_label('Data Retorno: ');
                         echo "<input type='text' name='data_retorno' id='data_retorno' class='form-control input-sm'>";
-                        echo '</div>';
-                        $this->db->where('status', 'A');
-                        $query = $this->db->get('tb_drivers');
-                        $opcao2[] = '';
-                        foreach ($query->result() as $driver) {
-                            $opcao2[$driver->id_drivers] = $driver->nome;
-                        }
-                        echo "<div class='col-md-4'>";
-                        echo form_label('Motorista: ');
-                        echo form_dropdown('id_motorista', $opcao2, 'v', 'class=form-control');
                         echo '</div>';
                         echo "<div class='col-md-2'>";
                         echo form_label('Preço: ');
