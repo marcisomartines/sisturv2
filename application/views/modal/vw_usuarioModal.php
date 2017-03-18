@@ -32,11 +32,11 @@
                             </div>
                            <div class='col-md-2'>
                                <?=form_label('Telefone: ')?>
-                                <input type='text' name='telefone' id='telefone' class='form-control input-sm' value='67 '>
+                                <input type='text' name='telefone' id='telefone' data-mask="(00) 0000-0000" placeholder="(__) ____-____" class='form-control input-sm' value='67 '>
                            </div>
                            <div class='col-md-2'>
                                <?=form_label('Celular: ')?>
-                                <input type='text' name='celular' id='celular' class='form-control input-sm' value='67 '>
+                                <input type='text' name='celular' id='celular' data-mask="(00) 00000-0000" placeholder="(__) _____-____" class='form-control input-sm' value='67 '>
                            </div>
 
                             <div class='col-md-2'>

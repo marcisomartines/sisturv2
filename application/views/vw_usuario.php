@@ -35,6 +35,26 @@ $listaUsuario =  $this->usuarios->listarUsuarios();
         </ol>
     </section>
 
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertCadastroFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao cadastrar usuário!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertCadastroSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Usuário cadastrado com sucesso!
+    </div>
+
+    <div class="alert alert-danger alert-dismissable" style="display: none;" id="alertEditaFalha">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-ban"></i> Erro ao editar usuário!
+    </div>
+
+    <div class="alert alert-success alert-dismissable" style="display: none;" id="alertEditaSucesso">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i> Motorista editado com sucesso!
+    </div>
+
     <!-- Main content -->
     <section class="content">
         <!-- Main row -->
@@ -45,32 +65,35 @@ $listaUsuario =  $this->usuarios->listarUsuarios();
                     "class"       =>"btn bg-purple",
                     "content"     =>"<i class='fa fa-plus'></i> Cadastrar Usuário",
                     "data-toggle" =>"modal",
+                    "onclick"     => "$('#acao_cadastro').val(1);limpaUsuario();",
                     "data-target" =>'#cadastrarUsuario']);
                 ?>
-                <table class="table table-striped">
-                    <tr>
-                        <th>Nome</th>
-                        <th>Nome Usuário</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Celular</th>
-                        <th>Ação</th>
-                    </tr>
-                    <?php
-                    foreach($listaUsuario as $usuario){
-                        ?>
+                <div id="usuarioLista">
+                    <table class="table table-striped">
                         <tr>
-                            <td><?=$usuario['nome_comp']?></td>
-                            <td><?=$usuario['nome_user']?></td>
-                            <td><?=$usuario['email']?></td>
-                            <td><?=$usuario['telefone']?></td>
-                            <td><?=$usuario['celular']?></td>
-                            <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarUsuario"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                            <th>Nome</th>
+                            <th>Nome Usuário</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Celular</th>
+                            <th>Ação</th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
+                        <?php
+                        foreach($listaUsuario as $usuario){
+                            ?>
+                            <tr>
+                                <td><?=$usuario['nome_comp']?></td>
+                                <td><?=$usuario['nome_user']?></td>
+                                <td><?=$usuario['email']?></td>
+                                <td><?=$usuario['telefone']?></td>
+                                <td><?=$usuario['celular']?></td>
+                                <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarUsuario" onclick="editaBuscaUsuario('<?=$usuario['id_users']?>');$('#acao_cadastro').val(2);limpaUsuario();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
 </div>

@@ -15,7 +15,7 @@ class Usuario extends CI_Controller
 
     public function editaBuscaUsuario(){
         $this->load->library('usuarios');
-        $this->carros->editaBuscaUsuario();
+        $this->usuarios->editaBuscaUsuario();
     }
 
     public function cadastrarUsuario(){
