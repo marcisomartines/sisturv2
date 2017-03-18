@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="<?=$agendamento?> treeview">
-                <a href="<?=base_url()?>Principal/agendamento">
+                <a href="<?=base_url()?>Agenda">
                     <i class="fa fa-calendar"></i> <span>Agendamento</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
