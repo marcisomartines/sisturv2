@@ -1,5 +1,6 @@
 function buscaCliente(){//PESQUISA DO SITE
     fechaMsg();
+    $("#tabelaCliente").show();
     $.ajax({
         url: 'buscaCliente',
         type: 'POST',

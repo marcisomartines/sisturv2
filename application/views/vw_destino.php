@@ -66,32 +66,36 @@ $destinos =  $this->viagem->destinos();
                         "data-toggle" =>"modal",
                         "data-target" =>'#cadastrarDestino']);
                 ?>
-                <div id="destinoLista">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Ação</th>
-                        </tr>
-                    <?php
-                    foreach($destinos as $des){
-                        ?>
-                        <tr>
-                            <td><?=$des['destino']?></td>
-                            <td><?php
-                                echo form_button(array(
-                                    'class'       => 'btn btn-primary',
-                                    'id'          => $des['id_viagem'],
-                                    'onclick'     => 'editaBuscaDestino('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);',
-                                    'content'     => "<i class='fa fa-pencil-square-o'></i> Editar",
-                                    "data-toggle" =>"modal",
-                                    "data-target" =>'#cadastrarDestino'
-                                ));
-                                ?></td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                    </table>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <div id="destinoLista">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Ação</th>
+                                </tr>
+                            <?php
+                            foreach($destinos as $des){
+                                ?>
+                                <tr>
+                                    <td><?=$des['destino']?></td>
+                                    <td><?php
+                                        echo form_button(array(
+                                            'class'       => 'btn btn-primary',
+                                            'id'          => $des['id_viagem'],
+                                            'onclick'     => 'editaBuscaDestino('.$des['id_viagem'].');$(\'#acao_cadastro\').val(2);',
+                                            'content'     => "<i class='fa fa-pencil-square-o'></i> Editar",
+                                            "data-toggle" =>"modal",
+                                            "data-target" =>'#cadastrarDestino'
+                                        ));
+                                        ?></td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

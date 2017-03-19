@@ -86,7 +86,11 @@ $clientemenu  = "active";
                 ?>
             </div>
         </div>
-        <div class="col-lg-12" id="clienteLista">
+        <div class="box" style="display: none;" id="tabelaCliente">
+            <div class="box-body table-responsive no-padding">
+                <div class="col-lg-12" id="clienteLista">
+                </div>
+            </div>
         </div>
         </div>
         <!-- FIM CONTEUDO -->

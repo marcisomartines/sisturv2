@@ -67,31 +67,35 @@ $listaOnibus =  $this->carros->listarOnibus();
                     "onclick"     => "$('#acao_cadastro').val(1);limpaOnibus();",
                     "data-target" => '#cadastrarOnibus']);
                 ?>
-                <div id="onibusLista">
-                    <table class="table table-striped">
-                        <tr>
-                        <th>Código</th>
-                        <th>Modelo</th>
-                        <th>N° Poltrona</th>
-                        <th>Placa</th>
-                        <th>Status</th>
-                        <th>Ação</th>
-                        </tr>
-                        <?php
-                        foreach($listaOnibus as $car){
-                        ?>
-                            <tr>
-                            <td><?=$car['codigo']?></td>
-                            <td><?=$car['modelo']?></td>
-                            <td><?=$car['nr_poltrona']?></td>
-                            <td><?=$car['placa']?></td>
-                            <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
-                            <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="editaBuscaOnibus('<?=$car['id_cars']?>');$('#acao_cadastro').val(2);limpaOnibus();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <div id="onibusLista">
+                            <table class="table table-striped">
+                                <tr>
+                                <th>Código</th>
+                                <th>Modelo</th>
+                                <th>N° Poltrona</th>
+                                <th>Placa</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                                </tr>
+                                <?php
+                                foreach($listaOnibus as $car){
+                                ?>
+                                    <tr>
+                                    <td><?=$car['codigo']?></td>
+                                    <td><?=$car['modelo']?></td>
+                                    <td><?=$car['nr_poltrona']?></td>
+                                    <td><?=$car['placa']?></td>
+                                    <td><?=$car['status']=='A'?'ATIVO':'INATIVO'?></td>
+                                    <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="editaBuscaOnibus('<?=$car['id_cars']?>');$('#acao_cadastro').val(2);limpaOnibus();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

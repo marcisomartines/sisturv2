@@ -68,31 +68,35 @@ $listaUsuario =  $this->usuarios->listarUsuarios();
                     "onclick"     => "$('#acao_cadastro').val(1);limpaUsuario();",
                     "data-target" =>'#cadastrarUsuario']);
                 ?>
-                <div id="usuarioLista">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Nome Usuário</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
-                            <th>Celular</th>
-                            <th>Ação</th>
-                        </tr>
-                        <?php
-                        foreach($listaUsuario as $usuario){
-                            ?>
-                            <tr>
-                                <td><?=$usuario['nome_comp']?></td>
-                                <td><?=$usuario['nome_user']?></td>
-                                <td><?=$usuario['email']?></td>
-                                <td><?=$usuario['telefone']?></td>
-                                <td><?=$usuario['celular']?></td>
-                                <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarUsuario" onclick="editaBuscaUsuario('<?=$usuario['id_users']?>');$('#acao_cadastro').val(2);limpaUsuario();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <div id="usuarioLista">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Nome Usuário</th>
+                                    <th>E-mail</th>
+                                    <th>Telefone</th>
+                                    <th>Celular</th>
+                                    <th>Ação</th>
+                                </tr>
+                                <?php
+                                foreach($listaUsuario as $usuario){
+                                    ?>
+                                    <tr>
+                                        <td><?=$usuario['nome_comp']?></td>
+                                        <td><?=$usuario['nome_user']?></td>
+                                        <td><?=$usuario['email']?></td>
+                                        <td><?=$usuario['telefone']?></td>
+                                        <td><?=$usuario['celular']?></td>
+                                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarUsuario" onclick="editaBuscaUsuario('<?=$usuario['id_users']?>');$('#acao_cadastro').val(2);limpaUsuario();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

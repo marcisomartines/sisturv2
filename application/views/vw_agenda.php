@@ -67,35 +67,39 @@ $listaAgenda = $this->agendas->listarAgenda();
                     "onclick"     => "$('#acao_cadastro').val(1);limpaAgenda();",
                     "data-target" =>'#cadastrarAgenda']);
                 ?>
-                <div id="agendaLista">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Código</th>
-                            <th>Ônibus</th>
-                            <th>Destino</th>
-                            <th>Saída</th>
-                            <th>Retorno</th>
-                            <th>Tipo</th>
-                            <th>Situação</th>
-                            <th>Ação</th>
-                        </tr>
-                        <?php
-                        foreach($listaAgenda as $agenda){
-                            ?>
-                            <tr>
-                                <td><?=$agenda['codigo']?></td>
-                                <td><?=$agenda['modelo']?></td>
-                                <td><?=$agenda['destino']?></td>
-                                <td><?=$agenda['data_saida']?></td>
-                                <td><?=$agenda['data_retorno']?></td>
-                                <td><?=$agenda['tipo']?></td>
-                                <td><?=$agenda['status']=='A'?'ATIVO':'FINALIZADO'?></td>
-                                <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarAgenda" onclick="editaBuscaAgenda('<?=$agenda['id_tour']?>');$('#acao_cadastro').val(2);limpaAgenda();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
-                            </tr>
-                            <?php
-                        }
-                        ?>
-                    </table>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <div id="agendaLista">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Ônibus</th>
+                                    <th>Destino</th>
+                                    <th>Saída</th>
+                                    <th>Retorno</th>
+                                    <th>Tipo</th>
+                                    <th>Situação</th>
+                                    <th>Ação</th>
+                                </tr>
+                                <?php
+                                foreach($listaAgenda as $agenda){
+                                    ?>
+                                    <tr>
+                                        <td><?=$agenda['codigo']?></td>
+                                        <td><?=$agenda['modelo']?></td>
+                                        <td><?=$agenda['destino']?></td>
+                                        <td><?=$agenda['data_saida']?></td>
+                                        <td><?=$agenda['data_retorno']?></td>
+                                        <td><?=$agenda['tipo']?></td>
+                                        <td><?=$agenda['status']=='A'?'ATIVO':'FINALIZADO'?></td>
+                                        <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarAgenda" onclick="editaBuscaAgenda('<?=$agenda['id_tour']?>');$('#acao_cadastro').val(2);limpaAgenda();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

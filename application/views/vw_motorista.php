@@ -68,31 +68,35 @@ $listaMotorista =  $this->carros->listarMotorista();
                     "onclick"     => "$('#acao_cadastro').val(1);limpaMotorista();",
                     "data-target" =>'#cadastrarMotorista']);
                 ?>
-                <div id="motoristaLista">
-                    <table class="table table-striped">
-                        <tr>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Celular</th>
-                        <th>Status</th>
-                        <th>Ação</th>
-                        </tr>
-                        <?php
-                        foreach($listaMotorista as $motorista){
-                            ?>
-                            <tr>
-                            <td><?=$motorista['nome']?></td>
-                            <td><?=$motorista['email']?></td>
-                            <td><?=$motorista['telefone']?></td>
-                            <td><?=$motorista['celular']?></td>
-                            <td><?=$motorista['status']=='A'?'ATIVO':'INATIVO'?></td>
-                            <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarMotorista" onclick="editaBuscaMotorista('<?=$motorista['id_drivers']?>');$('#acao_cadastro').val(2);limpaMotorista();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <div id="motoristaLista">
+                            <table class="table table-striped">
+                                <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>Celular</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                                </tr>
+                                <?php
+                                foreach($listaMotorista as $motorista){
+                                    ?>
+                                    <tr>
+                                    <td><?=$motorista['nome']?></td>
+                                    <td><?=$motorista['email']?></td>
+                                    <td><?=$motorista['telefone']?></td>
+                                    <td><?=$motorista['celular']?></td>
+                                    <td><?=$motorista['status']=='A'?'ATIVO':'INATIVO'?></td>
+                                    <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarMotorista" onclick="editaBuscaMotorista('<?=$motorista['id_drivers']?>');$('#acao_cadastro').val(2);limpaMotorista();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
