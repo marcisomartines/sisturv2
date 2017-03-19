@@ -25,11 +25,6 @@ class Destino extends CI_Controller
         $this->md_destino->editaDestino();
     }
 
-    public function editarBusca(){
-        $this->load->library('clientes');
-        $this->clientes->editaBuscaCliente();
-    }
-
     public function editarBuscaDestino(){
         $this->load->library('viagem');
         $this->viagem->editaBuscaDestino();

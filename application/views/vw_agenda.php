@@ -89,7 +89,7 @@ $listaAgenda = $this->agendas->listarAgenda();
                                 <td><?=$agenda['data_saida']?></td>
                                 <td><?=$agenda['data_retorno']?></td>
                                 <td><?=$agenda['tipo']?></td>
-                                <td><?=$agenda['status']=='A'?'ATIVO':'INATIVO'?></td>
+                                <td><?=$agenda['status']=='A'?'ATIVO':'FINALIZADO'?></td>
                                 <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarAgenda" onclick="editaBuscaAgenda('<?=$agenda['id_tour']?>');$('#acao_cadastro').val(2);limpaAgenda();"><i class="fa fa-pencil-square-o"></i> Editar</button></td>
                             </tr>
                             <?php

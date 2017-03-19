@@ -15,6 +15,24 @@ class Agenda extends CI_Controller
         $this->load->view('vw_agenda');
     }
 
+    public function cadastrarAgenda(){
+        $this->load->model('md_agenda');
+        $this->md_agenda->cadastraAgenda();
+    }
 
+    public function editarAgenda(){
+        $this->load->model('md_agenda');
+        $this->md_agenda->editaAgenda();
+    }
+
+    public function editarBuscaAgenda(){
+        $this->load->library('agendas');
+        $this->agendas->editaBuscaAgenda();
+    }
+
+    public function listaAgenda(){
+        $this->load->library('agendas');
+        $this->agendas->listaAgenda();
+    }
 
 }

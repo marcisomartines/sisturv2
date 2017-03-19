@@ -34,62 +34,50 @@ class md_agenda extends CI_Model
             ->result_array();
     }
 
-    public function editaBuscaMotorista(){
+    public function editaBuscaAgenda(){
         return $this->db->select("
-        id_drivers,
-        nome,
-        DATE_FORMAT(data_nascimento,'%d/%m/%Y') as data_nascimento,
-        rg,
-        cpf,
-        cnh,
-        DATE_FORMAT(validade_cnh,'%d/%m/%Y') as validade_cnh,
-        email,
-        telefone,
-        celular,
-        rua,
-        bairro,
-        cidade,
-        observacao
-        ")->where("id_drivers",$this->input->post('id_driver'))->get('tb_drivers')->result_array();
+            id_tour,
+            id_viagem,
+            id_car,
+            DATE_FORMAT(data_saida,'%d/%m/%Y') as data_saida,
+            DATE_FORMAT(data_retorno,'%d/%m/%Y') as data_retorno,
+            id_motorista,
+            preco,
+            preco_un,
+            tipo,
+            observacao
+        ")->where("id_tour",$this->input->post('id_tour'))->get('tb_tour')->result_array();
     }
 
-    public function cadastraMotorista(){
+    public function cadastraAgenda(){
         $dados = [
-            'nome'             => strtoupper($this->input->post('nome')),
-            'data_nascimento'  => dataBanco($this->input->post('data_nascimento')),
-            'rg'               => $this->input->post('rg'),
-            'cpf'              => $this->input->post('cpf'),
-            'cnh'              => $this->input->post('cnh'),
-            'validade_cnh'     => dataBanco($this->input->post('validade_cnh')),
-            'email'            => $this->input->post('email'),
-            'telefone'         => $this->input->post('telefone'),
-            'celular'          => $this->input->post('celular'),
-            'rua'              => strtoupper($this->input->post('rua')),
-            'bairro'           => strtoupper($this->input->post('bairro')),
-            'cidade'           => strtoupper($this->input->post('cidade')),
-            'observacao'       => strtoupper($this->input->post('observacao'))
+            'id_viagem'      => $this->input->post('id_viagem'),
+            'id_car'         => $this->input->post('id_car'),
+            'id_motorista'   => $this->input->post('id_motorista'),
+            'data_saida'     => dataBanco($this->input->post('data_saida')),
+            'data_retorno'   => dataBanco($this->input->post('data_retorno')),
+            'observacao'     => strtoupper($this->input->post('observacao')),
+            'preco'          => $this->input->post('preco'),
+            'preco_un'       => $this->input->post('preco_un'),
+            'tipo'           => $this->input->post('tipo')
         ];
 
-        $this->db->insert('tb_drivers',$dados);
+        $this->db->insert('tb_tour',$dados);
     }
 
-    public function editaMotorista(){
+    public function editaAgenda(){
 
         $dados = [
-            'nome'             => strtoupper($this->input->post('nome')),
-            'data_nascimento'  => dataBanco($this->input->post('data_nascimento')),
-            'rg'               => $this->input->post('rg'),
-            'cpf'              => $this->input->post('cpf'),
-            'cnh'              => $this->input->post('cnh'),
-            'validade_cnh'     => dataBanco($this->input->post('validade_cnh')),
-            'email'            => $this->input->post('email'),
-            'telefone'         => $this->input->post('telefone'),
-            'celular'          => $this->input->post('celular'),
-            'rua'              => strtoupper($this->input->post('rua')),
-            'bairro'           => strtoupper($this->input->post('bairro')),
-            'cidade'           => strtoupper($this->input->post('cidade')),
-            'observacao'       => strtoupper($this->input->post('observacao'))
+            'id_viagem'      => $this->input->post('id_viagem'),
+            'id_car'         => $this->input->post('id_car'),
+            'id_motorista'   => $this->input->post('id_motorista'),
+            'data_saida'     => dataBanco($this->input->post('data_saida')),
+            'data_retorno'   => dataBanco($this->input->post('data_retorno')),
+            'observacao'     => strtoupper($this->input->post('observacao')),
+            'preco'          => $this->input->post('preco'),
+            'preco_un'       => $this->input->post('preco_un'),
+            'tipo'           => $this->input->post('tipo')
         ];
-        $this->db->where('id_drivers',$this->input->post('id_driver'))->update('tb_drivers',$dados);
+        $this->db->where('id_tour',$this->input->post('id_tour'))->update('tb_tour',$dados);
     }
 }

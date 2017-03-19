@@ -13,7 +13,7 @@ function limpaAgenda(){
     $('#preco').val('');
     $('#preco_un').val('');
     $('#tipo').val('v');
-    $('#observacao').val(0);
+    $('#observacao').val('');
 }
 
 function acaoAgenda(){
@@ -132,7 +132,7 @@ function editaBuscaAgenda(id_tour){
     };
 
     $.ajax({
-        url: 'editaBuscaAgenda',
+        url: 'editarBuscaAgenda',
         type: 'POST',
         data: dados,
         beforeSend : function() {

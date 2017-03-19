@@ -42,12 +42,14 @@ class Agendas
         $html .= '<th>Ação</th>';
         foreach($agenda as $ag){
             $html .= '<tr>';
-            $html .= '<td>'.$ag['nome'].'</td>';
-            $html .= '<td>'.$ag['email'].'</td>';
-            $html .= '<td>'.$ag['telefone'].'</td>';
-            $html .= '<td>'.$ag['celular'].'</td>';
-            $html .= '<td>'.($ag['status']=='A'?'ATIVO':'INATIVO').'</td>';
-            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarOnibus" onclick="limpaMotorista();editaBuscaAgenda('.$ag['id_drivers'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
+            $html .= '<td>'.$ag['codigo'].'</td>';
+            $html .= '<td>'.$ag['modelo'].'</td>';
+            $html .= '<td>'.$ag['destino'].'</td>';
+            $html .= '<td>'.$ag['data_saida'].'</td>';
+            $html .= '<td>'.$ag['data_retorno'].'</td>';
+            $html .= '<td>'.$ag['tipo'].'</td>';
+            $html .= '<td>'.($ag['status']=='A'?'ATIVO':'FINALIZADO').'</td>';
+            $html .= '<td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#cadastrarAgenda" onclick="limpaAgenda();editaBuscaAgenda('.$ag['id_tour'].');$(\'#acao_cadastro\').val(2);"><i class="fa fa-pencil-square-o"></i> Editar</button></td>';
             $html .= '</tr>';
         }
         $html .= "</table>";
