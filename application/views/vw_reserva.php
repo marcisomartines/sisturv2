@@ -77,9 +77,7 @@ $reserva  = "active";
                                             ?> - <?= $data_saida ?>
                                         </td>
                                         <td>
-                                            <?php
-                                                echo form_open('home/reservaMapa') . '<input type="hidden" name="id_tour" value="' . $lista['id_tour'] . '"><input type="submit" class="btn btn-success btn-xs" value="Mapa de assentos"></form>';
-                                            ?>
+                                            <button class="btn btn-success btn-xs" data-toggle="modal" onclick="carregarMapa('<?=$lista['id_tour']?>');$('#acao_cadastro').val(2);"><i class="fa fa-pencil-square-o"></i> Mapa de assentos</button>
                                         </td>
                                     </tr>
                                     <!--                                        </a>-->

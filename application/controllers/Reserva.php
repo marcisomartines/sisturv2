@@ -12,4 +12,8 @@ class Reserva extends CI_COntroller
         $this->load->library('viagem');
         $this->load->view('vw_reserva');
     }
+
+    public function mapa(){
+        $this->load->view('mapa/mapa44');
+    }
 }

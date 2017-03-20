@@ -39,6 +39,7 @@
 <script src="<?=base_url()?>dist/js/funcoesMotorista.js"></script>
 <script src="<?=base_url()?>dist/js/funcoesUsuario.js"></script>
 <script src="<?=base_url()?>dist/js/funcoesAgenda.js"></script>
+<script src="<?=base_url()?>dist/js/funcoesReserva.js"></script>
 <script src="<?=base_url()?>dist/js/jquery.mask.min.js"></script>
 <script src="<?=base_url()?>dist/js/jquery-ui.js"></script>
 <script type="text/javascript" src="http://malsup.github.io/jquery.blockUI.js"></script>
