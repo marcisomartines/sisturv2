@@ -26,12 +26,12 @@ class Agenda extends CI_Controller
     }
 
     public function editarBuscaAgenda(){
-        $this->load->library('agendas');
+        $this->load->library('Agendas');
         $this->agendas->editaBuscaAgenda();
     }
 
     public function listaAgenda(){
-        $this->load->library('agendas');
+        $this->load->library('Agendas');
         $this->agendas->listaAgenda();
     }
 

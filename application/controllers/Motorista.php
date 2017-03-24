@@ -9,12 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Motorista extends CI_Controller
 {
     public function index(){
-        $this->load->library('carros');
+        $this->load->library('Carros');
         $this->load->view('vw_motorista');
     }
 
     public function editaBuscaMotorista(){
-        $this->load->library('carros');
+        $this->load->library('Carros');
         $this->carros->editaBuscaMotorista();
     }
 
@@ -29,7 +29,7 @@ class Motorista extends CI_Controller
     }
 
     public function listaMotorista(){
-        $this->load->library('carros');
+        $this->load->library('Carros');
         $this->carros->listaMotorista();
     }
 }

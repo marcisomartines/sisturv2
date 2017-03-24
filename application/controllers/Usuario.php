@@ -14,7 +14,7 @@ class Usuario extends CI_Controller
     }
 
     public function editaBuscaUsuario(){
-        $this->load->library('usuarios');
+        $this->load->library('Usuarios');
         $this->usuarios->editaBuscaUsuario();
     }
 
@@ -29,7 +29,7 @@ class Usuario extends CI_Controller
     }
 
     public function listaUsuario(){
-        $this->load->library('usuarios');
+        $this->load->library('Usuarios');
         $this->usuarios->listaUsuario();
     }
 

@@ -19,7 +19,7 @@ class Cliente extends CI_Controller{
 	}
 
 	public function buscaCliente(){
-		$this->load->library('clientes');
+		$this->load->library('Clientes');
 		$this->clientes->listaCliente();
 	}
 
@@ -29,7 +29,7 @@ class Cliente extends CI_Controller{
 	}
 
 	public function editarBuscaCliente(){
-		$this->load->library('clientes');
+		$this->load->library('Clientes');
 		$this->clientes->editaBuscaCliente();
 	}
 

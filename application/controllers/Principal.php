@@ -5,9 +5,9 @@ class Principal extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->library('passagem');
-		$this->load->library('viagem');
-		$this->load->library('avisos');
+		$this->load->library('Passagem');
+		$this->load->library('Viagem');
+		$this->load->library('Avisos');
 		$this->load->view('index');
 	}
 

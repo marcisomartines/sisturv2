@@ -9,12 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Onibus extends CI_Controller
 {
     public function index(){
-        $this->load->library('carros');
+        $this->load->library('Carros');
         $this->load->view('vw_onibus');
     }
 
     public function editaBuscaOnibus(){
-        $this->load->library('carros');
+        $this->load->library('Carros');
         $this->carros->editaBuscaOnibus();
     }
 
@@ -29,7 +29,7 @@ class Onibus extends CI_Controller
     }
 
     public function listaOnibus(){
-    	$this->load->library('carros');
+    	$this->load->library('Carros');
     	$this->carros->listaOnibus();
     }
 

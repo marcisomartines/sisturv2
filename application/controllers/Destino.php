@@ -10,8 +10,8 @@ class Destino extends CI_Controller
 {
     public function index(){
 
-        $this->load->library('viagem');
-        $this->load->library('destino');
+        $this->load->library('Viagem');
+        $this->load->library('Destino');
         $this->load->view('vw_destino');
     }
 
@@ -26,12 +26,12 @@ class Destino extends CI_Controller
     }
 
     public function editarBuscaDestino(){
-        $this->load->library('viagem');
+        $this->load->library('Viagem');
         $this->viagem->editaBuscaDestino();
     }
 
     public function listaDestino(){
-        $this->load->library('viagem');
+        $this->load->library('Viagem');
         $this->viagem->listaDestino();
     }
 }
