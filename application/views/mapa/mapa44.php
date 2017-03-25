@@ -29,10 +29,10 @@
                 </div>
                 <table  class="table table-bordered table-hover table-striped tablesorter">
                     <tr><!--1-->
-                        <td class="success"><button class="btn btn-success">01</button></td>
+                        <td class="success"><button class="btn btn-success" data-toggle="modal" data-target="#reservaModal">01</button></td>
                         <td class="success"><button class="btn btn-success">02</button></td>
                         <td rowspan="12" align="center">CORREDOR</td>
-                        <td class="success"><button class="btn btn-success">04</button></td>
+                        <td class="success"><button class="btn btn-success" >04</button></td>
                         <td class="success"><button class="btn btn-success">03</button></td>
                     </tr>
                     <tr><!--2-->
@@ -104,3 +104,5 @@
         </div>
     </div>
 </div>
+
+<button onclick="carregarMapa(44);">recarregar</button>

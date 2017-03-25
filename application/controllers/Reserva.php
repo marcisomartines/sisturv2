@@ -16,4 +16,8 @@ class Reserva extends CI_COntroller
     public function mapa(){
         $this->load->view('mapa/mapa44');
     }
+
+    public function autoComplete() {
+        $this->load->view('ajaxBuscaCliente');
+    }
 }

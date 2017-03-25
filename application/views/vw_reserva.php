@@ -16,7 +16,9 @@ $reserva  = "active";
 <!-- END HEAD -->
 <!-- LEFT MENU -->
 <?php include_once "menu/l_menue.php"; ?>
-
+<link rel="stylesheet" href="<?=base_url()?>bootstrap/js/jquery-ui-1.11.1.css">
+<script src="<?=base_url()?>plugins/jQuery/jquery-1.11.1.js"></script>
+<script src="<?=base_url()?>plugins/jQuery/jquery-ui-1.11.1.js"></script>
 <!-- END LEFT MENU -->
 <!-- INICIO CONTEUDO -->
 <div class="content-wrapper" id="conteudo">
@@ -57,35 +59,35 @@ $reserva  = "active";
                             <!--                  <div class="chart" id="line-chart" style="height: 250px;"></div>-->
                             <!--tabela-->
                             <div id="conteudo">
-                            <table class="table table-bordered">
-                                <?php
-                                $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
-                                foreach($listaViagem as $lista){
-                                    $data_saida = implode("/", array_reverse(explode("-", $lista['data_saida'])));
-                                    ?>
-                                    <tr>
-                                        <td>
-                                            <!--                                        <a href="#" class="list-group-item">-->
-                                            <i class="fa fa-calendar"></i> <?= $lista['destino'] ?> - <?php
-                                            if ($lista['tipo'] == 'v')
-                                                echo "Viagem";
-                                            elseif ($lista['tipo'] == 'f')
-                                                echo "Fretado";
-                                            elseif ($lista['tipo'] == 't')
-                                                echo "Turismo";
-                                            elseif ($lista['tipo'] == 'e')
-                                                echo "Excursão";
-                                            ?> - <?= $data_saida ?>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-success btn-xs" data-toggle="modal" onclick="carregarMapa('<?=$lista['id_tour']?>');$('#acao_cadastro').val(2);"><i class="fa fa-pencil-square-o"></i> Mapa de assentos</button>
-                                        </td>
-                                    </tr>
-                                    <!--                                        </a>-->
+                                <table class="table table-bordered">
                                     <?php
-                                }
-                                ?>
-                            </table>
+                                    $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
+                                    foreach($listaViagem as $lista){
+                                        $data_saida = implode("/", array_reverse(explode("-", $lista['data_saida'])));
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <!--                                        <a href="#" class="list-group-item">-->
+                                                <i class="fa fa-calendar"></i> <?= $lista['destino'] ?> - <?php
+                                                if ($lista['tipo'] == 'v')
+                                                    echo "Viagem";
+                                                elseif ($lista['tipo'] == 'f')
+                                                    echo "Fretado";
+                                                elseif ($lista['tipo'] == 't')
+                                                    echo "Turismo";
+                                                elseif ($lista['tipo'] == 'e')
+                                                    echo "Excursão";
+                                                ?> - <?= $data_saida ?>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" onclick="carregarMapa('<?=$lista['id_tour']?>');$('#acao_cadastro').val(2);"><i class="fa fa-pencil-square-o"></i> Mapa de assentos</button>
+                                            </td>
+                                        </tr>
+                                        <!--                                        </a>-->
+                                        <?php
+                                    }
+                                    ?>
+                                </table>
                             </div>
                             <!--fim tabela-->
                         </div><!-- /.box-body -->
@@ -98,6 +100,10 @@ $reserva  = "active";
         </div>
         <!-- FIM CONTEUDO -->
 </div><!-- FIM CONTEUDO -->
+
+<!-- Modal -->
+<?php include "modal/vw_reservaModal.php"; ?>
+<!-- FIM MODAL -->
 
 <!-- FOOTER -->
 <?php include_once "menu/l_footer.php"; ?>

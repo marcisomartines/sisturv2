@@ -40,3 +40,10 @@ function limparReserva(){
 function editaBuscaReserva(id_reservs){
 
 }
+
+$("#course").autocomplete({
+    source: "autoComplete",
+    width: 260,
+    matchContains: true,
+    selectFirst: false
+});
