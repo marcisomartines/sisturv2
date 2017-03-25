@@ -5,8 +5,14 @@ function carregarMapa(id_tour){
     var dados = {
         id_tour : id_tour
     }
+    $.blockUI({
+        message: 'Carregando...',
+        baseZ: 2000
+    });
 
     $("#conteudo").load('mapa');
+
+    $.unblockUI();
 }
 
 function salvarReserva(){

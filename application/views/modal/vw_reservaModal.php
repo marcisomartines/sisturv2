@@ -15,24 +15,56 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-3">
-
+                    <div class="col-md-6">
                         <?php
-                        $query = $this->db->get('tb_clients');
-                        $cliente[] = '';
-                        foreach ($query->result() as $clt) {
-                            $cliente[$clt->id_clients] = $clt->nome;
-                        }
+                            echo form_label("Nome: ");
+                            echo form_input([
+                                "name"=>"course",
+                                "id"=>"course",
+                                "class"=>"form-control"
+                            ]);
+                            echo form_hidden([
+                                "name"=>"cliente",
+                                "id"=>"cliente"
+                            ]);
                         ?>
+                        <button onclick="$('#cadastraCliente').show();">cadastra</button>
+                    </div>
+                    <div>
+                        <?php
+                        echo form_radio([
+                            'name'          => 'tipo',
+                            'id'            => 'tipo-i',
+                            'value'         => 'accept',
+                            'checked'       => FALSE,
+                            'style'         => 'margin-left:10px'
+                        ]);
+                        echo form_label('Ida');
 
-                        <input type="text" name="course" id="course" class="form-control" />
-                        <input type="hidden" name="cliente" id="cliente" class="form-control" />
+                        echo form_radio([
+                            'name'          => 'tipo',
+                            'id'            => 'tipo-v',
+                            'value'         => 'accept',
+                            'checked'       => FALSE,
+                            'style'         => 'margin-left:10px'
+                        ]);
+                        echo form_label('Volta');
+
+                        echo form_radio([
+                            'name'          => 'tipo',
+                            'id'            => 'tipo-d',
+                            'value'         => 'accept',
+                            'checked'       => TRUE,
+                            'style'         => 'margin-left:10px'
+                        ]);
+                        echo form_label('Ida/Volta')
+                        ?>
                     </div>
                     <div>
 
                     </div>
                 </div>
-                <div class="row" style="display: none;">
+                <div class="row" style="display: none;" id="cadastraCliente">
                     <div class="col-md-12">
                         <div class='row'>
                             <div class='col-md-6' id="nomeDiv">
