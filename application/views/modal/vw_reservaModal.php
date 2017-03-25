@@ -11,71 +11,63 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><b>Reservar Assento</b></h4>
+                <h4 class="modal-title" id="myModalLabel"><b>Reservar Assento <span id="assento"></span></b></h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
                         <?php
-                            echo form_label("Nome: ");
+                            echo form_label("Nome:");
                             echo form_input([
                                 "name"=>"course",
                                 "id"=>"course",
                                 "class"=>"form-control"
                             ]);
+
                             echo form_hidden([
                                 "name"=>"cliente",
                                 "id"=>"cliente"
                             ]);
                         ?>
-                        <button onclick="$('#cadastraCliente').show();">cadastra</button>
                     </div>
+                    <div class="col-md-1">
+                        <i id="novo" class="fa fa-plus-circle fa-2x" style="margin-top:27px;margin-left: -13px;" onclick="$('#cadastraCliente').show();$('#normal').show();$('#novo').hide();"></i>
+                        <i id="normal" class="fa fa-minus-circle fa-2x" style="margin-top:27px;margin-left: -13px;display: none;" onclick="$('#cadastraCliente').hide();;$('#normal').hide();;$('#novo').show();"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div>
                         <?php
                         echo form_radio([
                             'name'          => 'tipo',
                             'id'            => 'tipo-i',
-                            'value'         => 'accept',
+                            'value'         => 'i',
                             'checked'       => FALSE,
                             'style'         => 'margin-left:10px'
                         ]);
                         echo form_label('Ida');
-
                         echo form_radio([
                             'name'          => 'tipo',
                             'id'            => 'tipo-v',
-                            'value'         => 'accept',
+                            'value'         => 'v',
                             'checked'       => FALSE,
                             'style'         => 'margin-left:10px'
                         ]);
                         echo form_label('Volta');
-
                         echo form_radio([
                             'name'          => 'tipo',
                             'id'            => 'tipo-d',
-                            'value'         => 'accept',
+                            'value'         => 'd',
                             'checked'       => TRUE,
                             'style'         => 'margin-left:10px'
                         ]);
                         echo form_label('Ida/Volta')
                         ?>
                     </div>
-                    <div>
-
-                    </div>
                 </div>
                 <div class="row" style="display: none;" id="cadastraCliente">
                     <div class="col-md-12">
                         <div class='row'>
-                            <div class='col-md-6' id="nomeDiv">
-                                <?php
-                                echo form_label('Nome: ');
-                                echo form_input(['name'=>'nome',
-                                    'id'=>'nome',
-                                    'style'=>'text-transform: uppercase;',
-                                    'class'=>'form-control input-sm']);
-                                ?>
-                            </div>
                             <div class='col-md-2'>
                                 <?php
                                 echo form_label('Data Nasc.: ');
@@ -102,21 +94,11 @@
                                     'class'=>'form-control input-sm']);
                                 ?>
                             </div>
-                        </div>
-                        <div class='row'>
                             <div class='col-md-2'>
                                 <?php
                                 echo form_label('CPF: ');
                                 echo form_input(['name'=>'cpf',
                                     'id'=>'cpf',
-                                    'class'=>'form-control input-sm']);
-                                ?>
-                            </div>
-                            <div class='col-md-6'>
-                                <?php
-                                echo form_label('E-mail: ');
-                                echo form_input(['name'=>'email',
-                                    'id'=>'email',
                                     'class'=>'form-control input-sm']);
                                 ?>
                             </div>
@@ -138,7 +120,15 @@
                             </div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-4'>
+                            <div class='col-md-6'>
+                                <?php
+                                echo form_label('E-mail: ');
+                                echo form_input(['name'=>'email',
+                                    'id'=>'email',
+                                    'class'=>'form-control input-sm']);
+                                ?>
+                            </div>
+                            <div class='col-md-6'>
                                 <?php
                                 echo form_label('Rua: ');
                                 echo form_input(['name'=>'rua',
@@ -147,6 +137,9 @@
                                     'class'=>'form-control input-sm']);
                                 ?>
                             </div>
+                        </div>
+                        <div class='row'>
+
                             <div class='col-md-3'>
                                 <?php
                                 echo form_label('Bairro: ');
@@ -156,7 +149,7 @@
                                     'class'=>'form-control input-sm']);
                                 ?>
                             </div>
-                            <div class='col-md-2'>
+                            <div class='col-md-3'>
                                 <?php
                                 echo form_label('Cidade: ');
                                 echo form_input(['name'=>'cidade',
@@ -165,7 +158,7 @@
                                     'class'=>'form-control input-sm']);
                                 ?>
                             </div>
-                            <div class='col-md-3'>
+                            <div class='col-md-6'>
                                 <?php
                                 echo form_label('Local de Embarque: ');
                                 echo form_input(['name'=>'loc_embarque',
@@ -176,7 +169,7 @@
                             </div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-8'>
+                            <div class='col-md-12'>
                                 <?php
                                 echo form_label('Observação: ');
                                 echo form_input(['name'=>'observacao',
