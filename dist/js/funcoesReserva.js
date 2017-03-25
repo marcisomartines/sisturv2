@@ -6,9 +6,7 @@ function carregarMapa(id_tour){
         id_tour : id_tour
     }
 
-    $.ajax({
-
-    });
+    $("#conteudo").load('mapa');
 }
 
 function salvarReserva(){

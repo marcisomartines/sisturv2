@@ -56,6 +56,7 @@ $reserva  = "active";
                         <div class="box-body border-radius-none">
                             <!--                  <div class="chart" id="line-chart" style="height: 250px;"></div>-->
                             <!--tabela-->
+                            <div id="conteudo">
                             <table class="table table-bordered">
                                 <?php
                                 $listaViagem = $this->viagem->retornaListaViagem($via['id_viagem']);
@@ -85,6 +86,7 @@ $reserva  = "active";
                                 }
                                 ?>
                             </table>
+                            </div>
                             <!--fim tabela-->
                         </div><!-- /.box-body -->
                     </div>
