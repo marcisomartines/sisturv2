@@ -54,7 +54,7 @@
                 </a>
             </li>
             <li class="<?=$guia?> treeview">
-                <a href="<?=base_url()?>index.php/Principal/guia">
+                <a href="<?=base_url()?>Guia/">
                     <i class="fa fa-street-view"></i> <span>Guia</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
