@@ -17,4 +17,8 @@ class Guia extends CI_Controller
 
     }
 
+    public function mapaGuia(){
+
+    }
+
 }

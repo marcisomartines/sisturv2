@@ -11,7 +11,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><b>Reservar Assento <span id="assento"></span></b></h4>
+                <h4 class="modal-title" id="myModalLabel"><b>Reservar Assento (<span id="assento"></span>)</b></h4>
+                <input type="hidden" id="acao_cadastro" value="1" />
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -32,7 +33,7 @@
                     </div>
                     <div class="col-md-1">
                         <i id="novo" class="fa fa-plus-circle fa-2x" style="margin-top:27px;margin-left: -13px;" onclick="$('#cadastraCliente').show();$('#normal').show();$('#novo').hide();"></i>
-                        <i id="normal" class="fa fa-minus-circle fa-2x" style="margin-top:27px;margin-left: -13px;display: none;" onclick="$('#cadastraCliente').hide();;$('#normal').hide();;$('#novo').show();"></i>
+                        <i id="normal" class="fa fa-minus-circle fa-2x" style="margin-top:27px;margin-left: -13px;display: none;" onclick="$('#cadastraCliente').hide();$('#normal').hide();$('#novo').show();"></i>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -185,8 +186,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="limpaCliente();"><i class="fa fa-close"></i> Cancelar</button>
-                <button type="button" class="btn btn-success" onclick="acaoCliente();"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="limpaReserva();"><i class="fa fa-arrow-left"></i> Voltar</button>
+                <button id="cancelarReserva" type="button" class="btn btn-danger" data-dismiss="modal" onclick="cancelarReserva();"><i class="fa fa-close"></i> Cancelar Reserva</button>
+                <button type="button" class="btn btn-success" onclick="acaoReserva();"><i class="fa fa-check"></i> Salvar Reserva</button>
             </div>
         </div>
     </div>
