@@ -23,7 +23,8 @@ class Reservas
             ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
             ->where('id_tour',366)
             ->order_by('nr_poltrona')
-            ->get()->result_array();
+            ->get()
+            ->result_array();
 
         $reservas =[];
         foreach($resultado as $res){
@@ -36,6 +37,10 @@ class Reservas
         }
 
         return $reservas;
+    }
+
+    public function retornaReservas(){
+        echo 'teste';
     }
 
 }
