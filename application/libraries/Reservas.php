@@ -6,27 +6,24 @@
  * Date: 19/03/2017
  * Time: 11:38
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Reservas
 {
-    public function reservs($id_tour){
-        $resultado = $this->CI->db
-            ->select("
-            nr_poltrona,
-            id_tour,
-            id_client,
-            status_reserva,
-            nome,
-            sexo,
-            tipo
-            ")
-            ->from('tb_reservs')
-            ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
-            ->where('id_tour',366)
-            ->order_by('nr_poltrona')
-            ->get()
-            ->result_array();
+
+    protected $CI;
+    public function __construct()
+    {
+        $this->CI = &get_instance();
+    }
+
+    public function retornaReservas($id_tour)
+    {
+        $this->CI->load->model('md_passagem');
+
+        $resultado = $this->CI->md_passagem->retornaReservas($id_tour);
 
         $reservas =[];
+
         foreach($resultado as $res){
             $reservas[$res['nr_poltrona']][$res['id_client']]['nome']=$res['nome'];
             $reservas[$res['nr_poltrona']][$res['id_client']]['tipo']=$res['tipo'];
@@ -38,9 +35,4 @@ class Reservas
 
         return $reservas;
     }
-
-    public function retornaReservas(){
-        echo 'teste';
-    }
-
 }

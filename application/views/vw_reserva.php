@@ -83,7 +83,6 @@ $reserva  = "active";
                                                 <button class="btn btn-success btn-xs" data-toggle="modal" onclick="carregarMapa('<?=$lista['id_tour']?>');$('#acao_cadastro').val(2);"><i class="fa fa-pencil-square-o"></i> Mapa de assentos</button>
                                             </td>
                                         </tr>
-                                        <!--                                        </a>-->
                                         <?php
                                     }
                                     ?>
