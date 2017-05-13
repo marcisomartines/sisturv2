@@ -2,15 +2,13 @@
  * Created by marciso on 19/03/2017.
  */
 function carregarMapa(id_tour){
-    var dados = {
-        id_tour : id_tour
-    }
+   id_tour = 'id_tour='+id_tour;
     $.blockUI({
         message: 'Carregando...',
         baseZ: 2000
     });
 
-    $("#conteudo").load('mapa');
+    $("#conteudo").load('mapa44',id_tour);
 
     $.unblockUI();
 }
