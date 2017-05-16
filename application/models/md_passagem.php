@@ -104,13 +104,23 @@ class Md_passagem extends CI_Model
         return $res;
     }
 
-    public function retornaReservas($id_tour){
+    public function retornaReservas($id_tour){//todas as reservas de uma viagem
         return $this->db
             ->select("id_reservs,nr_poltrona,id_tour,id_client,status_reserva,nome,sexo,tipo")
             ->from('tb_reservs')
             ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
             ->where('id_tour',$id_tour)
             ->order_by('nr_poltrona')
+            ->get()
+            ->result_array();
+    }
+
+    public function retornaReserva($id_reservs){//reserva de um assento
+        return $this->db
+            ->select('*')
+            ->from('tb_reservs')
+            ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
+            ->where('id_reservs',$id_reservs)
             ->get()
             ->result_array();
     }
