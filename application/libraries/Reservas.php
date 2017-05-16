@@ -25,6 +25,7 @@ class Reservas
         $reservas =[];
 
         foreach($resultado as $res){
+            $reservas[$res['nr_poltrona']][$res['id_client']]['id_reservs']=$res['id_reservs'];
             $reservas[$res['nr_poltrona']][$res['id_client']]['nome']=$res['nome'];
             $reservas[$res['nr_poltrona']][$res['id_client']]['tipo']=$res['tipo'];
             $reservas[$res['nr_poltrona']][$res['id_client']]['id_tour']=$res['id_tour'];
@@ -34,5 +35,11 @@ class Reservas
         }
 
         return $reservas;
+    }
+
+    public function editaBuscaReserva($id_reservs)
+    {
+        $this->CI->load->md_passagem->retornaReserva($id_reservs);
+
     }
 }

@@ -13,6 +13,11 @@ class Reserva extends CI_COntroller
         $this->load->view('vw_reserva');
     }
 
+    public function editaBuscaReserva(){
+        $this->load->library('Reservas');
+        $this->reservas->editaBuscaReserva();
+    }
+
     public function mapa40(){
         $this->load->view('mapa/mapa40');
     }

@@ -106,7 +106,7 @@ class Md_passagem extends CI_Model
 
     public function retornaReservas($id_tour){
         return $this->db
-            ->select("nr_poltrona,id_tour,id_client,status_reserva,nome,sexo,tipo")
+            ->select("id_reservs,nr_poltrona,id_tour,id_client,status_reserva,nome,sexo,tipo")
             ->from('tb_reservs')
             ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
             ->where('id_tour',$id_tour)

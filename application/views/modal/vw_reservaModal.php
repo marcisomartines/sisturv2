@@ -13,6 +13,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><b>Reservar Assento (<span id="assento"></span>)</b></h4>
                 <input type="hidden" id="acao_cadastro" value="1" />
+                <input type="hidden" id="id_reservs" value="" />
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -187,7 +188,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="limpaReserva();"><i class="fa fa-arrow-left"></i> Voltar</button>
-                <button id="cancelarReserva" type="button" class="btn btn-danger" data-dismiss="modal" onclick="cancelarReserva();"><i class="fa fa-close"></i> Cancelar Reserva</button>
+                <button id="cancelarReserva" type="button" id="cancelaReserva" class="btn btn-danger" data-dismiss="modal" onclick="cancelaReserva();" ><i class="fa fa-close"></i> Cancelar Reserva</button>
                 <button type="button" class="btn btn-success" onclick="acaoReserva();"><i class="fa fa-check"></i> Salvar Reserva</button>
             </div>
         </div>
