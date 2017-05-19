@@ -84,6 +84,8 @@ function limpaClienteReserva(){
 function editaBuscaReserva(id_reservs){
     limpaReserva();
 
+    $('#cancelarReserva').show();
+
     var dados = {
         id_reservs : id_reservs
     };
@@ -104,21 +106,21 @@ function editaBuscaReserva(id_reservs){
         success: function(data){
             var reserva = JSON.parse(data);
 
-            $('#id_reservs').val(reserva[0].id_cars);
-            $('#course').val(reserva[0].codigo);
-            $('#montadora').val(veiculo[0].montadora);
-            $('#modelo').val(veiculo[0].modelo);
-            $('#ano').val(veiculo[0].ano);
-            $('#placa').val(veiculo[0].placa);
-            $('#chassis').val(veiculo[0].chassis);
-            $('#nr_poltrona').val(veiculo[0].nr_poltrona);
-            $('#antt').val(veiculo[0].antt);
-            $('#agepan').val(veiculo[0].agepan);
-            $('#vistec').val(veiculo[0].vistec);
-            $('#inmetro').val(veiculo[0].inmetro);
-            $('#seguro_inicio').val(veiculo[0].seguro_inicio);
-            $('#seguro_final').val(veiculo[0].seguro_final);
-            $('#licenciamento').val(veiculo[0].licenciamento);
+
+            $('#course').val(reserva[0].nome);
+            $('#id_reservs').val(reserva[0].id_reservs);
+            $('#data_nascimento').val(reserva[0].data_nascimento);
+            $('#sexo').val(reserva[0].sexo);
+            $('#rg').val(reserva[0].rg);
+            $('#cpf').val(reserva[0].cpf);
+            $('#telefone').val(reserva[0].telefone);
+            $('#celular').val(reserva[0].celular);
+            $('#email').val(reserva[0].email);
+            $('#bairro').val(reserva[0].bairro);
+            $('#rua').val(reserva[0].rua);
+            $('#cidade').val(reserva[0].cidade);
+            $('#loc_embarque').val(reserva[0].loc_embarque);
+            $('#observacoes').val(reserva[0].observacoes);
         }
     });
 }

@@ -115,12 +115,12 @@ class Md_passagem extends CI_Model
             ->result_array();
     }
 
-    public function retornaReserva($id_reservs){//reserva de um assento
+    public function retornaReserva(){//reserva de um assento
         return $this->db
             ->select('*')
             ->from('tb_reservs')
             ->join('tb_clients','tb_clients.id_clients=tb_reservs.id_client')
-            ->where('id_reservs',$id_reservs)
+            ->where('id_reservs',$this->input->post('id_reservs'))
             ->get()
             ->result_array();
     }

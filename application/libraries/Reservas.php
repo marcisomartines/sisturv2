@@ -37,10 +37,10 @@ class Reservas
         return $reservas;
     }
 
-    public function editaBuscaReserva($id_reservs)
+    public function editaBuscaReserva()
     {
         $this->CI->load->model('md_passagem');
-        $reserva = $this->CI->md_passagem->retornaReserva($id_reservs);
+        $reserva = $this->CI->md_passagem->retornaReserva();
 
         echo json_encode($reserva);
     }

@@ -188,7 +188,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="limpaReserva();"><i class="fa fa-arrow-left"></i> Voltar</button>
-                <button id="cancelarReserva" type="button" id="cancelaReserva" class="btn btn-danger" data-dismiss="modal" onclick="cancelaReserva();" ><i class="fa fa-close"></i> Cancelar Reserva</button>
+                <button id="cancelarReserva" type="button" id="cancelaReserva" class="btn btn-danger" data-dismiss="modal" onclick="cancelaReserva();" style="display: none;"><i class="fa fa-close"></i> Cancelar Reserva</button>
                 <button type="button" class="btn btn-success" onclick="acaoReserva();"><i class="fa fa-check"></i> Salvar Reserva</button>
             </div>
         </div>
