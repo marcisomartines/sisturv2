@@ -20,7 +20,7 @@ function retornaSituacaoAssento($nr_poltrona, $poltronas){
                 $cor = 'danger';
             }
 
-            $html .= "<button class='btn btn-{$cor}' data-toggle='modal' data-target='#reservaModal' onclick=\"$('#assento').html('{$nr_poltrona}');editaBuscaReserva('{$res['id_reservs']}')\">{$nr_poltrona}</button>";
+            $html .= "<button class='btn btn-{$cor}' data-toggle='modal' data-target='#reservaModal' onclick=\"$('#assento').html('{$nr_poltrona}');$('#acao_cadastro').val(2);editaBuscaReserva('{$res['id_reservs']}')\">{$nr_poltrona}</button>";
 
         }
 
@@ -29,7 +29,7 @@ function retornaSituacaoAssento($nr_poltrona, $poltronas){
     }else{
 
         $html .= "<td class='success'>";
-        $html .= "<button class='btn btn-success' data-toggle='modal' data-target='#reservaModal' onclick=\"$('#assento').html('{$nr_poltrona}');$('#cancelarReserva').hide();\">{$nr_poltrona}";
+        $html .= "<button class='btn btn-success' data-toggle='modal' data-target='#reservaModal' onclick=\"$('#assento').html('{$nr_poltrona}');$('#acao_cadastro').val(1);$('#cancelarReserva').hide();limpaReserva();\">{$nr_poltrona}";
         $html .= '</button>';
         $html .= '</td>';
     }

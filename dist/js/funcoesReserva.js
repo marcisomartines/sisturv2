@@ -85,6 +85,7 @@ function editaBuscaReserva(id_reservs){
     limpaReserva();
 
     $('#cancelarReserva').show();
+    $('#salvarReserva').html('<i class="fa fa-check"></i>Editar Reserva');
 
     var dados = {
         id_reservs : id_reservs
